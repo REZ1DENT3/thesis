@@ -50,12 +50,15 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
      * @param array|\stdClass $array
      * @return \stdClass
      */
-    public function convertToObject($array)
+    public static function convertToObject($array)
     {
         $object = new \stdClass();
         foreach ($array as $key => $value) {
+            if ($value instanceof \Deimos\Parser) {
+                $value = (array)$value;
+            }
             if (is_array($value)) {
-                $value = $this->convertToObject($value);
+                $value = self::convertToObject($value);
             }
             $object->$key = $value;
         }

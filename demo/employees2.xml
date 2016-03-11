@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<employees>
+    <employee id="3">
+        <firstname>Mikael</firstname>
+        <lastname>Ronstrom</lastname>
+        <weight type="g">55017</weight>
+        <body-height type="mm">2013.93</body-height>
+        <age type="week">2288</age>
+    </employee>
+    <employee id="2">
+        <firstname>Lars</firstname>
+        <lastname>Thalmann</lastname>
+        <weight type="kg">76.2</weight>
+        <length type="cm">187</length>
+        <age type="days">7737</age>
+    </employee>
+    <employee id="55">
+        <firstname>Ivan</firstname>
+        <lastname>Ivanov</lastname>
+        <weight type="pound">128.5</weight>
+        <bodyHeight type="m" value="1.73"/>
+    </employee>
+    <employee>
+        <name>
+            <lastname>Kelly</lastname>
+            <firstname>Grace</firstname>
+        </name>
+        <hiredate>October 15, 2005</hiredate>
+        <projects>
+            <project>
+                <product>Printer</product>
+                <id>111</id>
+                <price>$111.00</price>
+            </project>
+            <project>
+                <product>Laptop</product>
+                <id>222</id>
+                <price>$989.00</price>
+            </project>
+        </projects>
+    </employee>
+    <employee>
+        <name>
+            <lastname>Grant</lastname>
+            <firstname>Cary</firstname>
+        </name>
+        <hiredate>October 20, 2005</hiredate>
+        <projects>
+            <project>
+                <product>Desktop</product>
+                <id>333</id>
+                <price>$2995.00</price>
+            </project>
+            <project>
+                <product>Scanner</product>
+                <id>444</id>
+                <price>$200.00</price>
+            </project>
+        </projects>
+    </employee>
+    <employee>
+        <name>
+            <lastname>Gable</lastname>
+            <firstname>Clark</firstname>
+        </name>
+        <hiredate>October 25, 2005</hiredate>
+        <projects>
+            <project>
+                <product>Keyboard</product>
+                <id>555</id>
+                <price>$129.00</price>
+            </project>
+            <project>
+                <product>Mouse</product>
+                <id>666</id>
+                <price>$25.00</price>
+            </project>
+        </projects>
+    </employee>
+    <employee id="be129">
+        <firstname>Jane</firstname>
+        <lastname>Doe</lastname>
+        <title>Engineer</title>
+        <division>Materials</division>
+        <building>327</building>
+        <room>19</room>
+        <supervisor>be131</supervisor>
+    </employee>
+    <employee id="be130">
+        <firstname>William</firstname>
+        <lastname>Defoe</lastname>
+        <title>Accountant</title>
+        <division>Accts Payable</division>
+        <building>326</building>
+        <room>14a</room>
+    </employee>
+    <employee id="be131">
+        <firstname>Jack</firstname>
+        <lastname>Dee</lastname>
+        <title>Engineering Manager</title>
+        <division>Materials</division>
+        <building>327</building>
+        <room>21</room>
+    </employee>
+    <employee id="be132">
+        <firstname>Sandra</firstname>
+        <lastname>Rogers</lastname>
+        <title>Engineering</title>
+        <division>Materials</division>
+        <building>327</building>
+        <room>22</room>
+    </employee>
+    <employee id="be133">
+        <firstname>Steve</firstname>
+        <lastname>Casey</lastname>
+        <title>Engineering</title>
+        <division>Materials</division>
+        <building>327</building>
+        <room>24</room>
+    </employee>
+    <employee id="be135">
+        <firstname>Michelle</firstname>
+        <lastname>Michaels</lastname>
+        <title>COO</title>
+        <division>Management</division>
+        <building>216</building>
+        <room>264</room>
+    </employee>
+</employees>

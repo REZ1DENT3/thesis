@@ -60,6 +60,10 @@ class SemanticUltra extends Semantic
             return new \PhpUnitsOfMeasure\PhysicalQuantity\Time($value, $type);
         });
 
+        $this->hiredate = new \Deimos\Rule('d-m-Y', function ($value) {
+            return date('d-m-Y', strtotime($value));
+        });
+
         // Length
         $this->addAlias('length', 'growth');
         $this->addAlias('growth', 'body height');

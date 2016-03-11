@@ -61,6 +61,10 @@ class SemanticParser
 
             $tagName = $item->getName();
 
+            if ($this->semantic->isSemantic($tagName)) {
+                $tagName = $this->semantic->getOriginal($tagName);
+            }
+
             if (empty($data)) {
                 $data = new \stdClass();
             }
@@ -105,11 +109,23 @@ class SemanticParser
                 }
 
                 if (!$this->semantic->isSemantic($tgName)) {
-                    $_item->{$tgName}->{'@value'} = (string)$element;
+                    $_item->{$tgName}->{'#value'} = (object)$element;
+                    if (count((array)$_item->{$tgName}->{'#value'}) == 1) {
+                        if (is_array($_item->{$tgName}->{'#value'}->{0})) {
+                            $_item->{$tgName} = (array)$_item->{$tgName}->{'#value'}->{0};
+                            $_item->{$tgName} = QueryParser::convertToObject($_item->{$tgName});
+                        }
+                        else {
+                            $_item->{$tgName} = (array)$_item->{$tgName}->{'#value'};
+                            if (count($_item->{$tgName}) == 1) {
+                                $_item->{$tgName} = $_item->{$tgName}[0];
+                            }
+                        }
+                    }
+                    continue;
                 }
 
                 $type = $element->attr('type');
-
                 if ($type) {
                     $value = (string)$element;
                     if (empty($value)) {
@@ -118,16 +134,22 @@ class SemanticParser
                     if ($value) {
                         $result = $this->semantic->{$tgName}($value, $type);
                         if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {
-                            $_item->{$tgName}->{'@attributes'}['originalSemantic'] = array(
-                                '@value' => $value,
-                                '@type' => $type
-                            );
-                            $_item->{$tgName}->{'@value'} = array(
+                            $_item->{$tgName}->{'#value'} = array(
                                 'value' => $result->toUnit($this->semantic->{$tgName}),
                                 'type' => $this->semantic->{$tgName}
                             );
                         }
                     }
+                }
+                else {
+                    $value = (string)$element;
+                    if (empty($value)) {
+                        $value = $element->attr('value');
+                    }
+                    $_item->{$tgName}->{'#value'} = array(
+                        'value' => $this->semantic->{$tgName}($value),
+                        'type' => $this->semantic->{$tgName}
+                    );
                 }
 
             }
