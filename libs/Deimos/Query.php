@@ -97,10 +97,29 @@ class Query
                 $operator = $this->getValue($where->{$i++});
                 $const = $this->getValue($where->{$i++});
 
-                if ($operator[0] == 'BETWEEN') {
-                    $operator[0] = '=';
-                    $const = range($const[0], $this->getValue($where->{++$i})[0]);
-                    $i++;
+                switch ($operator[0]) {
+
+                    case 'BETWEEN':
+                        $operator[0] = '=';
+                        $const = range($const[0], $this->getValue($where->{++$i})[0]);
+                        $i++;
+                        break;
+
+                    case '<=':
+                        $operator = array('<', '=');
+                        break;
+
+                    case '>=':
+                        $operator = array('>', '=');
+                        break;
+
+                    case 'IS':
+                        if ($const[0] == 'NOT') {
+                            $operator[0] = 'IS NOT';
+                            $const = $this->getValue($where->{$i++});
+                        }
+                        break;
+
                 }
 
                 $newData = array_filter(
@@ -133,16 +152,12 @@ class Query
                                 $ind++;
                             }
 
-                            if ($opr == '=' && in_array($value, $const)) {
+                            if (in_array($opr, array('=', 'IS')) && in_array($value, $const)) {
                                 $ind++;
                             }
 
-                            if ($opr == 'IS') {
-                                foreach ($const as $c) {
-                                    if ($c === $value) {
-                                        $ind++;
-                                    }
-                                }
+                            if (in_array($opr, array('!=', 'IS NOT')) && !in_array($value, $const)) {
+                                $ind++;
                             }
 
                         }

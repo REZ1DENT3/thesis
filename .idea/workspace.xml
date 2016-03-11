@@ -26,36 +26,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employees.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employees.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/employees.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61041296">
+            <state vertical-scroll-proportion="-13.076923">
               <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Semantic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/Semantic.php">
+      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.653846">
-              <caret line="110" column="31" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="31" />
+            <state vertical-scroll-proportion="-8.346154">
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.61041296">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="24" selection-end-column="5" />
               <folding>
-                <marker date="1457703508995" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
-                <marker date="1457703508995" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
-                <marker date="1457703508995" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
-                <marker date="1457703508995" expanded="true" signature="488:562" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457704291370" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
+                <marker date="1457704291370" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
+                <marker date="1457704291370" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457704291370" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457704291370" expanded="true" signature="612:693" placeholder="SELECT * FRO... employees.xml" />
               </folding>
             </state>
           </provider>
@@ -95,11 +96,11 @@
         <option value="$PROJECT_DIR$/person.xml" />
         <option value="$PROJECT_DIR$/person.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
-        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
         <option value="$PROJECT_DIR$/employees.xml" />
         <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -255,7 +256,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2655068" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -674,35 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.091561936">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/Semantic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.653846">
-          <caret line="110" column="31" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <marker date="1457703508995" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
-            <marker date="1457703508995" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
-            <marker date="1457703508995" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
-            <marker date="1457703508995" expanded="true" signature="488:562" placeholder="SELECT * FRO... employees.xml" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40754038">
@@ -711,11 +683,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/Semantic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.556553">
+          <caret line="110" column="31" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/employees.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61041296">
+        <state vertical-scroll-proportion="-13.076923">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.346154">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61041296">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <marker date="1457704291370" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
+            <marker date="1457704291370" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
+            <marker date="1457704291370" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457704291370" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457704291370" expanded="true" signature="612:693" placeholder="SELECT * FRO... employees.xml" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,10 +18,16 @@ include_once "vendor/autoload.php";
 //        AND `employee.weight.@value.value` > 56
 //");
 
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `employees.xml`
+//  WHERE `employee.length.@value.value` IS 173
+//");
+
 $query = new \Deimos\Query("
   SELECT *
   FROM `employees.xml`
-  WHERE `employee.length.@value.value` > 0
+  WHERE `employee.length.@value.value` IS NOT 173
 ");
 
 var_dump($query->execute());
