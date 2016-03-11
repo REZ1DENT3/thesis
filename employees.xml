@@ -18,6 +18,6 @@
         <firstname>Ivan</firstname>
         <lastname>Ivanov</lastname>
         <weight type="pound">128.5</weight>
-        <bodyHeight type="m" value="1.73" />
+        <bodyHeight type="m" value="1.73"/>
     </employee>
 </employees>

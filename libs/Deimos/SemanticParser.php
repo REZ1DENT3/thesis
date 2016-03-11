@@ -89,6 +89,10 @@ class SemanticParser
 
                 $attr = $element->attr();
 
+                if ($this->semantic->isSemantic($tgName)) {
+                    $tgName = $this->semantic->getOriginal($tgName);
+                }
+
                 if (!isset($_item->{$tgName})) {
                     $_item->{$tgName} = new \stdClass();
                 }

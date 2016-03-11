@@ -11,11 +11,17 @@ include_once "vendor/autoload.php";
 //  ORDER BY `employee.@attributes.id` DESC
 //");
 
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `employees.xml`
+//  WHERE `employee.weight.@value.value` < 60
+//        AND `employee.weight.@value.value` > 56
+//");
+
 $query = new \Deimos\Query("
   SELECT *
   FROM `employees.xml`
-  WHERE `employee.weight.@value.value` < 60
-        AND `employee.weight.@value.value` > 56
+  WHERE `employee.length.@value.value` > 0
 ");
 
 var_dump($query->execute());

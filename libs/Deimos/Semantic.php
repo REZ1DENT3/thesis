@@ -103,4 +103,21 @@ class Semantic
             throw new \Exception();
         }
     }
+
+    /**
+     * @param $name
+     * @throws \Exception
+     */
+    public function getOriginal($name)
+    {
+        if (in_array($name, array_keys($this->_rowAliases)) && $this->isSemantic($this->_rowAliases[$name])) {
+            return $this->_rowAliases[$name];
+        }
+        else if ($this->isSemantic($name)) {
+            return $name;
+        }
+        else {
+            throw new \Exception();
+        }
+    }
 }
