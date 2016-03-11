@@ -1,0 +1,14 @@
+{
+  "autoload": {
+    "psr-0": {
+      "com\\soloproyectos\\common": "src/",
+      "": "libs/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.0",
+    "triplepoint/php-units-of-measure": "^2.0",
+    "thapp/xmlbuilder": "^0.1.4",
+    "greenlion/php-sql-parser": "^4.0"
+  }
+}

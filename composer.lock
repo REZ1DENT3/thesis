@@ -1,0 +1,174 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6457296bada4dfb3725a350be57d8273",
+    "content-hash": "092feb5fc851b7133fb8a9eba63f664e",
+    "packages": [
+        {
+            "name": "greenlion/php-sql-parser",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greenlion/PHP-SQL-Parser.git",
+                "reference": "c162c6458ee21cc0a7dfe73a3eec303e5c9a6945"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greenlion/PHP-SQL-Parser/zipball/c162c6458ee21cc0a7dfe73a3eec303e5c9a6945",
+                "reference": "c162c6458ee21cc0a7dfe73a3eec303e5c9a6945",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.0.14",
+                "squizlabs/php_codesniffer": ">=1.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/PHPSQLParser/PHPSQLCreator.php",
+                    "src/PHPSQLParser/PHPSQLParser.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "André Rothe",
+                    "email": "phosco@gmx.de",
+                    "homepage": "https://www.phosco.info",
+                    "role": "Committer"
+                },
+                {
+                    "name": "Justin Swanhart",
+                    "email": "greenlion@gmail.com",
+                    "homepage": "http://code.google.com/u/greenlion@gmail.com/",
+                    "role": "Owner"
+                }
+            ],
+            "description": "A pure PHP SQL (non validating) parser w/ focus on MySQL dialect of SQL",
+            "homepage": "http://code.google.com/p/php-sql-parser/",
+            "keywords": [
+                "creator",
+                "mysql",
+                "parser",
+                "sql"
+            ],
+            "time": "2014-04-16 10:03:29"
+        },
+        {
+            "name": "thapp/xmlbuilder",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iwyg/xmlbuilder.git",
+                "reference": "6b69b02d0634ac6182c12f47de18c2703b05c449"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iwyg/xmlbuilder/zipball/6b69b02d0634ac6182c12f47de18c2703b05c449",
+                "reference": "6b69b02d0634ac6182c12f47de18c2703b05c449",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.7"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Thapp": "src/"
+                },
+                "classmap": [
+                    "tests/"
+                ],
+                "files": [
+                    "src/includes/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "iwyg",
+                    "email": "mail@thomas-appel.com"
+                }
+            ],
+            "description": "Xmlbuilder utilitity",
+            "time": "2013-10-15 17:50:56"
+        },
+        {
+            "name": "triplepoint/php-units-of-measure",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhpUnitsOfMeasure/php-units-of-measure.git",
+                "reference": "2424d6444333603c04bc16bc864cd0b45730ea65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhpUnitsOfMeasure/php-units-of-measure/zipball/2424d6444333603c04bc16bc864cd0b45730ea65",
+                "reference": "2424d6444333603c04bc16bc864cd0b45730ea65",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "replace": {
+                "triplepoint/php-units-of-measure": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpUnitsOfMeasure\\": "source/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Hanson",
+                    "email": "jonathan@jonathan-hanson.org",
+                    "homepage": "http://www.jonathan-hanson.org/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP library for converting between standard units of measure.",
+            "homepage": "https://github.com/PhpUnitsOfMeasure/php-units-of-measure",
+            "keywords": [
+                "conversion",
+                "data",
+                "measurements"
+            ],
+            "abandoned": "php-units-of-measure/php-units-of-measure",
+            "time": "2015-12-12 19:31:49"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.5.0"
+    },
+    "platform-dev": []
+}
