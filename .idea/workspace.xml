@@ -29,34 +29,38 @@
       <file leaf-file-name="employees.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/employees.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Query.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.346154">
-              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29802513">
+              <caret line="202" column="58" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61041296">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="24" selection-end-column="5" />
+            <state vertical-scroll-proportion="-9.653846">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding>
-                <marker date="1457704291370" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
-                <marker date="1457704291370" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
-                <marker date="1457704291370" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
-                <marker date="1457704291370" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
-                <marker date="1457704291370" expanded="true" signature="612:693" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
+                <marker date="1457705113660" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
+                <marker date="1457705113660" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="616:701" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="744:896" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="829:890" placeholder="SELECT max(`... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="935:1081" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457705113660" expanded="true" signature="1014:1077" placeholder="SELECT max(`... employees.xml" />
               </folding>
             </state>
           </provider>
@@ -99,8 +103,8 @@
         <option value="$PROJECT_DIR$/employees.xml" />
         <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
-        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
       </list>
     </option>
   </component>
@@ -693,31 +697,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/employees.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.346154">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61041296">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="24" selection-end-column="5" />
+        <state vertical-scroll-proportion="-9.653846">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding>
-            <marker date="1457704291370" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
-            <marker date="1457704291370" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
-            <marker date="1457704291370" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
-            <marker date="1457704291370" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
-            <marker date="1457704291370" expanded="true" signature="612:693" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="79:98" placeholder="SELECT * FRO... " />
+            <marker date="1457705113660" expanded="true" signature="79:277" placeholder="SELECT * FRO... person.xml" />
+            <marker date="1457705113660" expanded="true" signature="320:449" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="492:573" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="616:701" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="744:896" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="829:890" placeholder="SELECT max(`... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="935:1081" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457705113660" expanded="true" signature="1014:1077" placeholder="SELECT max(`... employees.xml" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29802513">
+          <caret line="202" column="58" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

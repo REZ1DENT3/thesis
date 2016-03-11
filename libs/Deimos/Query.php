@@ -27,6 +27,12 @@ class Query
     private function getValue($stdObj)
     {
         $res = array();
+        if ($stdObj->expr_type == 'subquery') {
+            var_dump((new self(trim(trim($stdObj->base_expr, '()'))))
+                ->execute());
+            die;
+        }
+
         if ($stdObj->sub_tree) {
             foreach ($stdObj->sub_tree as $sub) {
                 $res[] = $this->getValue($sub)[0];
@@ -192,10 +198,30 @@ class Query
             }
 
             foreach ($select as $s) {
-                // todo
+                var_dump($s);
+
+//                UCASE() - Converts a field to upper case
+//                LCASE() - Converts a field to lower case
+//                MID() - Extract characters from a text field
+//                LEN() - Returns the length of a text field
+//                ROUND() - Rounds a numeric field to the number of decimals specified
+//                NOW() - Returns the current system date and time
+//                FORMAT() - Formats how a field is to be displayed
+
+//                AVG() - Returns the average value
+//                COUNT() - Returns the number of rows
+//                FIRST() - Returns the first value
+//                LAST() - Returns the last value
+//                MAX() - Returns the largest value
+//                MIN() - Returns the smallest value
+//                SUM() - Returns the sum
+
             }
 
+            die;
+
             break; // first file
+
         }
 
         return $semanticArray;

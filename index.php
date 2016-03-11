@@ -24,10 +24,26 @@ include_once "vendor/autoload.php";
 //  WHERE `employee.length.@value.value` IS 173
 //");
 
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `employees.xml`
+//  WHERE `employee.length.@value.value` IS NOT 173
+//");
+
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `employees.xml`
+//  WHERE `employee.length.@value.value` = (
+//    SELECT max(employee.length.@value.value) FROM `employees.xml`
+//  )
+//");
+
 $query = new \Deimos\Query("
   SELECT *
   FROM `employees.xml`
-  WHERE `employee.length.@value.value` IS NOT 173
+  WHERE `employee.length.@value.value` = (
+    SELECT max(`employee.length.@value.value`) FROM `employees.xml`
+  )
 ");
 
 var_dump($query->execute());
