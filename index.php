@@ -2,15 +2,25 @@
 
 include_once "vendor/autoload.php";
 
-$query = new \Deimos\Query("
-  SELECT avg(`employee.@id`)
-  FROM `demo/employees.xml`
-  WHERE
-        `employee.@id` IN (1, 2, 3, 4, 5) OR
-        `employee.@id` BETWEEN 2 AND 54 OR
-        `employee.age` > 20
-  ORDER BY `employee.@id`
-");
+//$query = new \Deimos\Query("
+//  SELECT `employee.@id`
+//  FROM `demo/employees.xml`
+//  WHERE
+//        `employee.@id` IN (1, 2, 3, 4, 5) OR
+//        `employee.@id` BETWEEN 2 AND 54 OR
+//        `employee.age` > 20
+//  ORDER BY `employee.@id` DESC
+//");
+
+//$query = new \Deimos\Query("
+//  SELECT avg(`employee.@id`)
+//  FROM `demo/employees.xml`
+//  WHERE
+//        `employee.@id` IN (1, 2, 3, 4, 5) OR
+//        `employee.@id` BETWEEN 2 AND 54 OR
+//        `employee.age` > 20
+//  ORDER BY `employee.@id`
+//");
 
 //$query = new \Deimos\Query("
 //  SELECT *
@@ -64,12 +74,24 @@ $query = new \Deimos\Query("
 //  )
 //");
 
-//$query = new \Deimos\Query("
-//  SELECT *
+$query = new \Deimos\Query("
+  SELECT *
+  FROM `demo/employees.xml`
+  WHERE `employee.length` IN (
+    SELECT min(`employee.length`)
+    FROM `demo/employees.xml`
+  )
+");
+
+// todo
+//$query = new Deimos\Query("
+//  SELECT (sin(max(`employee.length`))
+//        + cos(min(`employee.length`))) * -1
 //  FROM `demo/employees.xml`
-//  WHERE `employee.length` > (
-//    SELECT sin(min(`employee.length`)) FROM `demo/employees.xml`
-//  )
+//  WHERE `employee.length` > max(round(`employee.length`))
+//  ORDER BY `employee.length` DESC
 //");
+
+//$query = new \Deimos\Query("SELECT sin(1) FROM `demo/dual.xml`;");
 
 var_dump($query->execute());

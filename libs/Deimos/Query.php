@@ -27,18 +27,32 @@ class Query
         $this->parser = new QueryParser($sql);
     }
 
-    private function getValue($stdObj, $functions = array())
+    private function getValue($stdObj)
     {
         $res = array();
 
+        if ($stdObj->expr_type == ExpressionType::EXPRESSION) {
+
+        }
+
+        if ($stdObj->expr_type == ExpressionType::CONSTANT) {
+            return array($stdObj->base_expr);
+        }
+
         if ($stdObj->expr_type == ExpressionType::SUBQUERY) {
-            var_dump((new self(trim(trim($stdObj->base_expr, '()'))))
-                ->execute());
+            $value = (new self(trim(trim($stdObj->base_expr, '()'))))
+                ->execute();
+
+            if (is_array($value)) {
+                return $value;
+            }
+
+            return array($value);
         }
 
         if ($stdObj->sub_tree) {
             foreach ($stdObj->sub_tree as $sub) {
-                $res[] = $this->getValue($sub, $functions)[0];
+                $res[] = $this->getValue($sub)[0];
             }
         }
         else if (isset($stdObj->no_quotes) &&
@@ -94,6 +108,23 @@ class Query
 
         return $value;
 
+    }
+
+    public function usort(&$semanticArray, $parts, $alias, $self, $o)
+    {
+        uasort($semanticArray, function ($a, $b) use ($parts, $alias, $self, $o) {
+            $a = $self->getWithParts($parts, $alias, $a);
+            $b = $self->getWithParts($parts, $alias, $b);
+            $mul = 1;
+            if ($o->direction == 'DESC') {
+                $mul = -1;
+            }
+            if (!(is_numeric($a) && is_numeric($b)) && (!is_string($a) || !is_string($b))) {
+                $a = spl_object_hash((object)$a);
+                $b = spl_object_hash((object)$b);
+            }
+            return $mul * strcmp($a, $b);
+        });
     }
 
     public function execute()
@@ -221,6 +252,10 @@ class Query
                                 $ind++;
                             }
 
+                            if ($opr == 'IN' && in_array($value, $const)) {
+                                $ind++;
+                            }
+
                         }
 
                         return $ind;
@@ -254,31 +289,33 @@ class Query
 
                 $parts = explode('.', $this->getValue($o)[0]);
                 $semanticArray = (array)$semanticArray;
-                usort($semanticArray, function ($a, $b) use ($parts, $alias, $self, $o) {
-                    $a = $self->getWithParts($parts, $alias, $a);
-                    $b = $self->getWithParts($parts, $alias, $b);
-                    $mul = 1;
-                    if ($o->direction == 'DESC') {
-                        $mul = -1;
+                if (is_numeric(key($semanticArray))) {
+                    $this->usort($semanticArray, $parts, $alias, $self, $o);
+                }
+                else {
+                    foreach ($semanticArray as &$sem) {
+                        $this->usort($sem, $parts, $alias, $self, $o);
                     }
-                    if (!is_string($a) || !is_string($b)) {
-                        $a = spl_object_hash((object)$a);
-                        $b = spl_object_hash((object)$b);
-                    }
-                    return $mul * strcmp($a, $b);
-                });
+                }
 
             }
 
             foreach ($select as $s) {
 
-                $parts = explode('.', $this->getValue($s)[0]);
-                $semanticArray = array_values(array_map(function ($a) use ($parts, $alias, $self) {
-                    return $self->getWithParts($parts, $alias, $a, true);
-                }, (array)$semanticArray));
+                $parts = $this->getValue($s)[0];
+                if (!is_numeric($parts)) {
+                    $parts = explode('.', $parts);
+                    $semanticArray = array_values(array_map(function ($a) use ($parts, $alias, $self) {
+                        return $self->getWithParts($parts, $alias, $a, true);
+                    }, (array)$semanticArray));
+                }
+                else {
+                    $semanticArray = $parts;
+                }
 
+                $sArray = $semanticArray;
                 if (is_array($semanticArray[0]) && count($semanticArray) == 1) {
-                    $semanticArray = $semanticArray[0];
+                    $sArray = $semanticArray[0];
                 }
 
                 $functions = array();
@@ -290,24 +327,71 @@ class Query
 
                 for ($i = count($functions) - 1; $i >= 0; --$i) {
                     if (function_exists($functions[$i])) {
-                        $semanticArray = $functions[$i]($semanticArray);
+                        try {
+                            $sArrayS = $functions[$i]($sArray);
+                            if (!$sArrayS) {
+                                if (is_array($sArray) || is_object($sArray)) {
+                                    foreach ($sArray as &$sA) {
+                                        $sA = $functions[$i]((array)$sA);
+                                    }
+                                }
+                            }
+                            else {
+                                $sArray = $sArrayS;
+                            }
+                        }
+                        catch (\Exception $e) {
+                            $sArray = $functions[$i]($sArray);
+                        }
                     }
                     else if ($functions[$i] == 'avg') {
-                        $semanticArray = array_sum($semanticArray) / count($semanticArray);
+                        $sArray = array_sum($sArray) / count($sArray);
                     }
                     else if ($functions[$i] == 'sum') {
-                        $semanticArray = array_sum($semanticArray);
+                        $sArray = array_sum($sArray);
                     }
                     else if ($functions[$i] == 'first') {
-                        $semanticArray = current($semanticArray);
+                        $sArray = current($sArray);
                     }
                     else if ($functions[$i] == 'last') {
-                        $semanticArray = end($semanticArray);
+                        $sArray = end($sArray);
+                    }
+                    else if ($functions[$i] == 'length') {
+                        if (is_array($sArray) || is_object($sArray)) {
+                            foreach ($sArray as &$sA) {
+                                $sA = mb_strlen($sA);
+                            }
+                        }
+                        else {
+                            $sArray = mb_strlen($sArray);
+                        }
+                    }
+                    else if ($functions[$i] == 'date') {
+                        if (is_array($sArray) || is_object($sArray)) {
+                            foreach ($sArray as &$sA) {
+                                $sA = date('d-m-Y', strtotime($sA));
+                            }
+                        }
+                        else {
+                            $sArray = date('d-m-Y', strtotime($sArray));
+                        }
+                    }
+                    else if ($functions[$i] == 'datetime') {
+                        if (is_array($sArray) || is_object($sArray)) {
+                            foreach ($sArray as &$sA) {
+                                $sA = date('d-m-Y H:i:s', strtotime($sA));
+                            }
+                        }
+                        else {
+                            $sArray = date('d-m-Y H:i:s', strtotime($sArray));
+                        }
                     }
                     else {
                         throw new \Exception($functions[$i]);
                     }
                 }
+
+                $semanticArray = $sArray;
 
 //                UCASE() - Converts a field to upper case
 //                LCASE() - Converts a field to lower case
