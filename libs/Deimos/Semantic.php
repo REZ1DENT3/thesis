@@ -44,7 +44,7 @@ class Semantic
     }
 
     /**
-     * @param $name
+     * @param $name string
      * @param Rule $value
      * @throws \Exception
      */
@@ -52,6 +52,7 @@ class Semantic
     {
         $this->_row[$name] = $value->getMethod();
         $this->_defaultUnit[$name] = $value->getDefaultUnit();
+        $this->addAlias($name, mb_strtoupper($name));
         foreach ($value->getAliasList() as $aliasName) {
             $this->addAlias($name, $aliasName);
         }
@@ -71,7 +72,7 @@ class Semantic
     }
 
     /**
-     * @param $name
+     * @param $name string
      * @return mixed
      * @throws \Exception
      */
@@ -105,7 +106,8 @@ class Semantic
     }
 
     /**
-     * @param $name
+     * @param $name string
+     * @return mixed
      * @throws \Exception
      */
     public function getOriginal($name)

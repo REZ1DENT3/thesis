@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tables>
+    <!-- Таблица departments -->
+    <table name="departments">
+        <column name="id">1</column>
+        <column name="name">Кафедра информационных технологий</column>
+        <column name="abbreviated">inftech</column>
+        <column name="faculty_id">2</column>
+    </table>
+    <table name="departments">
+        <column name="id">2</column>
+        <column name="name">Kафедра математического моделирования</column>
+        <column name="abbreviated">mathmod</column>
+        <column name="faculty_id">2</column>
+    </table>
+    <table name="departments">
+        <column name="id">3</column>
+        <column name="name">Кафедра вычислительных технологий</column>
+        <column name="abbreviated">kvt</column>
+        <column name="faculty_id">2</column>
+    </table>
+    <table name="departments">
+        <column name="id">4</column>
+        <column name="name">Кафедра прикладной математики</column>
+        <column name="abbreviated">appmath</column>
+        <column name="faculty_id">2</column>
+    </table>
+    <table name="departments">
+        <column name="id">5</column>
+        <column name="name">Kафедра интеллектуальных информационных систем</column>
+        <column name="abbreviated">hightech</column>
+        <column name="faculty_id">2</column>
+    </table>
+    <table name="departments">
+        <column name="id">6</column>
+        <column name="name">Кафедра физического воспитания</column>
+        <column name="abbreviated">kaf_fv</column>
+        <column name="faculty_id">18</column>
+    </table>
+    <table name="departments">
+        <column name="id">7</column>
+        <column name="name">Кафедра истории и культурологии</column>
+        <column name="abbreviated">kaf_histkult</column>
+        <column name="faculty_id">18</column>
+    </table>
+    <table name="departments">
+        <column name="id">8</column>
+        <column name="name">Кафедра иностранных языков для естественных специальностей</column>
+        <column name="abbreviated">kaf_estspec</column>
+        <column name="faculty_id">18</column>
+    </table>
+    <table name="departments">
+        <column name="id">9</column>
+        <column name="name">Кафедра иностранных языков для гуманитарных специальностей</column>
+        <column name="abbreviated">kaf_gumspec</column>
+        <column name="faculty_id">18</column>
+    </table>
+    <table name="departments">
+        <column name="id">10</column>
+        <column name="name">Кафедра социальной психологии и социологии управления</column>
+        <column name="abbreviated">kaf_spasom</column>
+        <column name="faculty_id">10</column>
+    </table>
+    <!-- Таблица faculties -->
+    <table name="faculties">
+        <column name="id">18</column>
+        <column name="name">Межфакультетские кафедры</column>
+    </table>
+    <table name="faculties">
+        <column name="id">15</column>
+        <column name="name">Факультет архитектуры и дизайна</column>
+    </table>
+    <table name="faculties">
+        <column name="id">5</column>
+        <column name="name">Факультет биологический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">6</column>
+        <column name="name">Факультет географический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">7</column>
+        <column name="name">Факультет геологический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">16</column>
+        <column name="name">Факультет журналистики</column>
+    </table>
+    <table name="faculties">
+        <column name="id">11</column>
+        <column name="name">Факультет истории, социологии и международных отношений</column>
+    </table>
+    <table name="faculties">
+        <column name="id">2</column>
+        <column name="name">Факультет компьютерных технологий и прикладной математики</column>
+    </table>
+    <table name="faculties">
+        <column name="id">1</column>
+        <column name="name">Факультет математики и компьютерных наук</column>
+    </table>
+    <table name="faculties">
+        <column name="id">17</column>
+        <column name="name">Факультет педагогики, психологии и коммуникативистики</column>
+    </table>
+    <table name="faculties">
+        <column name="id">13</column>
+        <column name="name">Факультет романо-германской филологии</column>
+    </table>
+    <table name="faculties">
+        <column name="id">10</column>
+        <column name="name">Факультет управления и психологии</column>
+    </table>
+    <table name="faculties">
+        <column name="id">3</column>
+        <column name="name">Факультет физико-технический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">12</column>
+        <column name="name">Факультет филологический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">4</column>
+        <column name="name">Факультет химии и высоких технологий</column>
+    </table>
+    <table name="faculties">
+        <column name="id">14</column>
+        <column name="name">Факультет художественно-графический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">8</column>
+        <column name="name">Факультет экономический</column>
+    </table>
+    <table name="faculties">
+        <column name="id">9</column>
+        <column name="name">Факультет юридический</column>
+    </table>
+    <!-- Таблица teachers -->
+    <table name="teachers">
+        <column name="id">1</column>
+        <column name="name">Кольцов Юрий Владимирович</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46228</column>
+    </table>
+    <table name="teachers">
+        <column name="id">2</column>
+        <column name="name">Гаркуша Олег Васильевич</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46206</column>
+    </table>
+    <table name="teachers">
+        <column name="id">3</column>
+        <column name="name">Осипян Валерий Осипович</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46245</column>
+    </table>
+    <table name="teachers">
+        <column name="id">4</column>
+        <column name="name">Подколзин Вадим Владиславович</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46248</column>
+    </table>
+    <table name="teachers">
+        <column name="id">5</column>
+        <column name="name">Гарнага Валерий Владимирович</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">6</column>
+        <column name="name">Синица Сергей Геннадьевич</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">7</column>
+        <column name="name">Полупанов Алексей Александрович</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">8</column>
+        <column name="name">Лукащик Елена Павловна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46237</column>
+    </table>
+    <table name="teachers">
+        <column name="id">9</column>
+        <column name="name">Добровольская Наталья Юрьевна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">10</column>
+        <column name="name">Харченко Анна Владимировна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46266</column>
+    </table>
+    <table name="teachers">
+        <column name="id">11</column>
+        <column name="name">Михайличенко Анна Александровна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">12</column>
+        <column name="name">Уварова Анастасия Викторовна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">13</column>
+        <column name="name">Бабешко Владимир Андреевич</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46199</column>
+    </table>
+    <table name="teachers">
+        <column name="id">14</column>
+        <column name="name">Бессарабов Николай Васильевич</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46201</column>
+    </table>
+    <table name="teachers">
+        <column name="id">15</column>
+        <column name="name">Капустин Михаил Сергеевич</column>
+        <column name="department_id">2</column>
+        <column name="deleted">1</column>
+        <column name="professorrating">46221</column>
+    </table>
+    <table name="teachers">
+        <column name="id">16</column>
+        <column name="name">Павлова Алла Владимировна</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46246</column>
+    </table>
+    <table name="teachers">
+        <column name="id">17</column>
+        <column name="name">Рубцов Сергей Евгеньевич</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46251</column>
+    </table>
+    <table name="teachers">
+        <column name="id">18</column>
+        <column name="name">Сыромятников Павел Викторович</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">19</column>
+        <column name="name">Тажкенов Денис Альбертович</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">20</column>
+        <column name="name">Миков Александр Иванович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">21</column>
+        <column name="name">Борисов Александр Николаевич</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">22</column>
+        <column name="name">Воробьев Всеволод Вадимович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">23</column>
+        <column name="name">Глушков Евгений Викторович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46209</column>
+    </table>
+    <table name="teachers">
+        <column name="id">24</column>
+        <column name="name">Гортинская Виктория Викторовна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46210</column>
+    </table>
+    <table name="teachers">
+        <column name="id">25</column>
+        <column name="name">Данилов Евгений Александрович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46212</column>
+    </table>
+    <table name="teachers">
+        <column name="id">26</column>
+        <column name="name">Ерёмин Артем Александрович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">27</column>
+        <column name="name">Ермоленко Сергей Сергеевич</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">28</column>
+        <column name="name">Кособуцкая Екатерина Владимировна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46229</column>
+    </table>
+    <table name="teachers">
+        <column name="id">29</column>
+        <column name="name">Кузнецова Вероника Владимировна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">30</column>
+        <column name="name">Лапина Ольга Николаевна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46233</column>
+    </table>
+    <table name="teachers">
+        <column name="id">31</column>
+        <column name="name">Малыхин Константин Владимирович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46239</column>
+    </table>
+    <table name="teachers">
+        <column name="id">32</column>
+        <column name="name">Моспан Надежда Вадимовна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">33</column>
+        <column name="name">Пекшева Марина Владимировна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">34</column>
+        <column name="name">Фоменко Сергей Иванович</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">35</column>
+        <column name="name">Храмцова Виктория Викторовна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">36</column>
+        <column name="name">Черных Наталья Михайловна</column>
+        <column name="department_id">3</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46272</column>
+    </table>
+    <table name="teachers">
+        <column name="id">37</column>
+        <column name="name">Уртенов Махамет Али Хусеевич</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46263</column>
+    </table>
+    <table name="teachers">
+        <column name="id">38</column>
+        <column name="name">Казаковцева Екатерина Васильевна</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">39</column>
+        <column name="name">Калайдина Галина Вениаминовна</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">40</column>
+        <column name="name">Кармазин Владимир Николаевич</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46222</column>
+    </table>
+    <table name="teachers">
+        <column name="id">41</column>
+        <column name="name">Коваленко Анна Владимировна</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46226</column>
+    </table>
+    <table name="teachers">
+        <column name="id">42</column>
+        <column name="name">Колотий Александр Дмитриевич</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46227</column>
+    </table>
+    <table name="teachers">
+        <column name="id">43</column>
+        <column name="name">Лебедев Константин Андреевич</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46234</column>
+    </table>
+    <table name="teachers">
+        <column name="id">44</column>
+        <column name="name">Письменский Александр Владимирович</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46247</column>
+    </table>
+    <table name="teachers">
+        <column name="id">45</column>
+        <column name="name">Сеидова Наталья Михайловна</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46255</column>
+    </table>
+    <table name="teachers">
+        <column name="id">46</column>
+        <column name="name">Халафян Алексан Альбертович</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46264</column>
+    </table>
+    <table name="teachers">
+        <column name="id">47</column>
+        <column name="name">Шаповаленко Василий Всеволодович</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46274</column>
+    </table>
+    <table name="teachers">
+        <column name="id">48</column>
+        <column name="name">Юнов Сергей Владленович</column>
+        <column name="department_id">4</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46276</column>
+    </table>
+    <table name="teachers">
+        <column name="id">49</column>
+        <column name="name">Костенко Константин Иванович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46230</column>
+    </table>
+    <table name="teachers">
+        <column name="id">50</column>
+        <column name="name">Васильев Юрий Петрович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46204</column>
+    </table>
+    <table name="teachers">
+        <column name="id">51</column>
+        <column name="name">Грушко Галина Владимировна</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46211</column>
+    </table>
+    <table name="teachers">
+        <column name="id">52</column>
+        <column name="name">Зарецкая Марина Валерьевна</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">53</column>
+        <column name="name">Лебедева Анастасия Павловна</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">54</column>
+        <column name="name">Мазин Василий Александрович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46238</column>
+    </table>
+    <table name="teachers">
+        <column name="id">55</column>
+        <column name="name">Пряхина Ольга Донатовна</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46250</column>
+    </table>
+    <table name="teachers">
+        <column name="id">56</column>
+        <column name="name">Смирнова Алла Васильевна</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46257</column>
+    </table>
+    <table name="teachers">
+        <column name="id">57</column>
+        <column name="name">Степаненко Евгений Антонович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">58</column>
+        <column name="name">Стоян Владимир Петрович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46260</column>
+    </table>
+    <table name="teachers">
+        <column name="id">59</column>
+        <column name="name">Терешенков Владимир Александрович</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">46261</column>
+    </table>
+    <table name="teachers">
+        <column name="id">60</column>
+        <column name="name">Логинов Владимир Викторович</column>
+        <column name="department_id">6</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">61</column>
+        <column name="name">Марьяненко Дарья Александровна</column>
+        <column name="department_id">10</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">62</column>
+        <column name="name">Привал Данил Андреевич</column>
+        <column name="department_id">2</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">63</column>
+        <column name="name">Пантелеева Алина Михайловна</column>
+        <column name="department_id">1</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+    <table name="teachers">
+        <column name="id">64</column>
+        <column name="name">Белкин Виктор Юрьевич</column>
+        <column name="department_id">5</column>
+        <column name="deleted">0</column>
+        <column name="professorrating">0</column>
+    </table>
+</tables>

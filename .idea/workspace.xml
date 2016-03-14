@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b2d15f-a590-4a89-8d53-c5d16c4595dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/dual.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/tables.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/dual.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/employees2.xml" afterPath="$PROJECT_DIR$/demo/employees2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Query.php" afterPath="$PROJECT_DIR$/libs/Deimos/Query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/QueryParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Semantic.php" afterPath="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
     </list>
     <ignored path="xmlparser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,36 +39,36 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.390681">
-              <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.60394263">
+              <caret line="90" column="3" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
               <folding>
-                <marker date="1457786411258" expanded="true" signature="79:290" placeholder="SELECT `empl... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="79:295" placeholder="SELECT `empl... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="338:554" placeholder="SELECT * FRO... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="597:699" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1457786411258" expanded="true" signature="742:814" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1457786411258" expanded="true" signature="857:917" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1457786411258" expanded="true" signature="857:997" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1457786411258" expanded="true" signature="1040:1148" placeholder="SELECT * FRO... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="1191:1255" placeholder="SELECT tan(m... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="1709:1844" placeholder="SELECT * FRO... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="1826:1840" placeholder="SELECT max(`... employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="1826:1844" placeholder="SELECT * FRO... employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="1892:2099" placeholder="SELECT `empl... demo/employees.xml" />
-                <marker date="1457786411258" expanded="true" signature="2137:2171" placeholder="SELECT sin(1... demo/dual.xml" />
+                <marker date="1457960922697" expanded="true" signature="79:290" placeholder="SELECT `empl... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="79:295" placeholder="SELECT `empl... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="338:554" placeholder="SELECT * FRO... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="597:699" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1457960922697" expanded="true" signature="742:814" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1457960922697" expanded="true" signature="857:917" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1457960922697" expanded="true" signature="857:997" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1457960922697" expanded="true" signature="1191:1255" placeholder="SELECT tan(m... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1534:1701" placeholder="SELECT `empl... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1634:1695" placeholder="SELECT max(`... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1744:1885" placeholder="SELECT * FRO... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1864:1879" placeholder="SELECT max(`... employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1864:1885" placeholder="SELECT * FRO... employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="1924:2031" placeholder="SELECT array... demo/tables.xml" />
+                <marker date="1457960922697" expanded="true" signature="2079:2286" placeholder="SELECT `empl... demo/employees.xml" />
+                <marker date="1457960922697" expanded="true" signature="2324:2347" placeholder="SELECT sin(1... demo/dual.xml" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+      <file leaf-file-name="tables.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/tables.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.692308">
-              <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
-              <folding>
-                <element signature="e#26#68#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="138" column="14" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,13 +109,15 @@
         <option value="$PROJECT_DIR$/person.xml" />
         <option value="$PROJECT_DIR$/person.php" />
         <option value="$PROJECT_DIR$/employees.xml" />
-        <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
-        <option value="$PROJECT_DIR$/demo/employees2.xml" />
-        <option value="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticUltra.php" />
-        <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
         <option value="$PROJECT_DIR$/demo/dual.xml" />
+        <option value="$PROJECT_DIR$/demo/employees2.xml" />
+        <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
+        <option value="$PROJECT_DIR$/demo/data.xml" />
+        <option value="$PROJECT_DIR$/demo/tables.xml" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -155,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,182 +178,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exception" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="combinator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exception" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xmlparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arguments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,6 +209,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xmlparser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xmlparser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -384,7 +230,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,7 +307,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2881997" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29727685" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -766,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/Semantic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.556553">
-          <caret line="110" column="31" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -795,55 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/QueryParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4856631">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/employees2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8172043">
-          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoLast.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.1577061">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticUltra.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1218638">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/employees.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3655914">
-          <caret line="12" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/dual.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03046595">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,35 +648,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticUltra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.384615">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="134" column="74" selection-start-line="134" selection-start-column="74" selection-end-line="134" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/Semantic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5125448">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/employees2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5842295">
+          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/QueryParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39784947">
+          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.692308">
-          <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.26881722">
+          <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
           <folding>
             <element signature="e#26#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo/employees.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27419356">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/tables.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="138" column="14" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.390681">
-          <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.60394263">
+          <caret line="90" column="3" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
           <folding>
-            <marker date="1457786411258" expanded="true" signature="79:290" placeholder="SELECT `empl... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="79:295" placeholder="SELECT `empl... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="338:554" placeholder="SELECT * FRO... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="597:699" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1457786411258" expanded="true" signature="742:814" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1457786411258" expanded="true" signature="857:917" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1457786411258" expanded="true" signature="857:997" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1457786411258" expanded="true" signature="1040:1148" placeholder="SELECT * FRO... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="1191:1255" placeholder="SELECT tan(m... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="1709:1844" placeholder="SELECT * FRO... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="1826:1840" placeholder="SELECT max(`... employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="1826:1844" placeholder="SELECT * FRO... employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="1892:2099" placeholder="SELECT `empl... demo/employees.xml" />
-            <marker date="1457786411258" expanded="true" signature="2137:2171" placeholder="SELECT sin(1... demo/dual.xml" />
+            <marker date="1457960922697" expanded="true" signature="79:290" placeholder="SELECT `empl... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="79:295" placeholder="SELECT `empl... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="338:554" placeholder="SELECT * FRO... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="597:699" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1457960922697" expanded="true" signature="742:814" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1457960922697" expanded="true" signature="857:917" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1457960922697" expanded="true" signature="857:997" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1457960922697" expanded="true" signature="1191:1255" placeholder="SELECT tan(m... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1534:1701" placeholder="SELECT `empl... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1634:1695" placeholder="SELECT max(`... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1744:1885" placeholder="SELECT * FRO... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1864:1879" placeholder="SELECT max(`... employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1864:1885" placeholder="SELECT * FRO... employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="1924:2031" placeholder="SELECT array... demo/tables.xml" />
+            <marker date="1457960922697" expanded="true" signature="2079:2286" placeholder="SELECT `empl... demo/employees.xml" />
+            <marker date="1457960922697" expanded="true" signature="2324:2347" placeholder="SELECT sin(1... demo/dual.xml" />
           </folding>
         </state>
       </provider>

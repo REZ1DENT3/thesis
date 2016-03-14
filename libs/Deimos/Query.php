@@ -130,7 +130,7 @@ class Query
     public function execute()
     {
 
-        $params = array('from', 'select');
+        $params = array('select', 'from');
 
         /**
          * @var $from \stdClass
@@ -166,7 +166,12 @@ class Query
                 $alias = $table->alias->name;
             }
 
-            $parser = new Parser(file_get_contents($filePath));
+            if ($filePath == 'dual') {
+                $parser = new Parser("<dual></dual>");
+            }
+            else {
+                $parser = new Parser(file_get_contents($filePath));
+            }
 
             $this->semanticParser[$alias] = new SemanticParser($parser);
             $this->semanticParser[$alias]->execute();
@@ -325,14 +330,22 @@ class Query
                     $m = $m->sub_tree->{'0'};
                 }
 
+                if (is_array($sArray)) {
+                    foreach ($sArray as $skArr => $svArr) {
+                        if (is_array($sArray[$skArr]) && empty($sArray[$skArr])) {
+                            unset($sArray[$skArr]);
+                        }
+                    }
+                }
+
                 for ($i = count($functions) - 1; $i >= 0; --$i) {
                     if (function_exists($functions[$i])) {
                         try {
                             $sArrayS = $functions[$i]($sArray);
-                            if (!$sArrayS) {
+                            if (!is_numeric($sArrayS) && !$sArrayS) {
                                 if (is_array($sArray) || is_object($sArray)) {
                                     foreach ($sArray as &$sA) {
-                                        $sA = $functions[$i]((array)$sA);
+                                        $sA = $functions[$i]($sA);
                                     }
                                 }
                             }
@@ -400,14 +413,6 @@ class Query
 //                ROUND() - Rounds a numeric field to the number of decimals specified
 //                NOW() - Returns the current system date and time
 //                FORMAT() - Formats how a field is to be displayed
-
-//                AVG() - Returns the average value
-//                COUNT() - Returns the number of rows
-//                FIRST() - Returns the first value
-//                LAST() - Returns the last value
-//                MAX() - Returns the largest value
-//                MIN() - Returns the smallest value
-//                SUM() - Returns the sum
 
             }
 

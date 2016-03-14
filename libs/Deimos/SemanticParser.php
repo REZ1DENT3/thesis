@@ -132,7 +132,7 @@ class SemanticParser
                         $value = $element->attr('value');
                     }
                     if ($value) {
-                        $result = $this->semantic->{$tgName}($value, $type);
+                        $result = $this->semantic->{mb_strtoupper($tgName)}($value, $type);
                         if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {
                             $_item->{$tgName}->{'#value'} = array(
                                 'value' => $result->toUnit($this->semantic->{$tgName}),

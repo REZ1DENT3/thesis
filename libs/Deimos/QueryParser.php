@@ -68,7 +68,7 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    private function _select()
+    final protected function _select()
     {
         return $this->parsed->SELECT;
     }
@@ -84,7 +84,7 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    private function _from()
+    final protected function _from()
     {
         return $this->parsed->FROM;
     }
@@ -100,7 +100,7 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    private function _where()
+    final protected function _where()
     {
         return $this->parsed->WHERE;
     }
@@ -116,7 +116,7 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    private function _orderBy()
+    final protected function _orderBy()
     {
         return $this->parsed->ORDER;
     }

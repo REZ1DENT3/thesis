@@ -67,20 +67,27 @@ include_once "vendor/autoload.php";
 //");
 
 //$query = new \Deimos\Query("
-//  SELECT *
+//  SELECT floor(`employee.length`)
 //  FROM `demo/employees.xml`
-//  WHERE `employee.length` = (
-//    SELECT max(employee.length) FROM `demo/employees.xml`
+//  WHERE `employee.length` < (
+//    SELECT max(`employee.length`)
+//    FROM `demo/employees.xml`
+//  )
+//");
+
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `demo/employees2.xml`
+//  WHERE `employee.@id` IN (
+//    SELECT min(`employee.@id`)
+//    FROM `demo/employees2.xml`
 //  )
 //");
 
 $query = new \Deimos\Query("
-  SELECT *
-  FROM `demo/employees.xml`
-  WHERE `employee.length` IN (
-    SELECT min(`employee.length`)
-    FROM `demo/employees.xml`
-  )
+  SELECT array_unique(`table.column.#value.0`)
+  FROM `demo/tables.xml`
+  WHERE `table.@name` = `departments`
 ");
 
 // todo
@@ -92,6 +99,6 @@ $query = new \Deimos\Query("
 //  ORDER BY `employee.length` DESC
 //");
 
-//$query = new \Deimos\Query("SELECT sin(1) FROM `demo/dual.xml`;");
+//$query = new \Deimos\Query("SELECT sin(1) FROM dual;");
 
 var_dump($query->execute());
