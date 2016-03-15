@@ -112,7 +112,7 @@ class Query
 
     public function usort(&$semanticArray, $parts, $alias, $self, $o)
     {
-        uasort($semanticArray, function ($a, $b) use ($parts, $alias, $self, $o) {
+        $cmp = function ($a, $b) use ($parts, $alias, $self, $o) {
             $a = $self->getWithParts($parts, $alias, $a);
             $b = $self->getWithParts($parts, $alias, $b);
             $mul = 1;
@@ -124,7 +124,9 @@ class Query
                 $b = spl_object_hash((object)$b);
             }
             return $mul * strcmp($a, $b);
-        });
+        };
+
+        uasort($semanticArray, $cmp);
     }
 
     public function execute()

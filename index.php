@@ -35,8 +35,15 @@ include_once "vendor/autoload.php";
 //  ORDER BY `employee.@id` DESC
 //");
 
+$query = new \Deimos\Query("
+  SELECT *
+  FROM `demo/employees2.xml`
+  WHERE `employee.hiredate` BETWEEN `15-10-2000` AND `15-10-2015`
+  ORDER BY `employee.@id` DESC
+");
+
 //$query = new \Deimos\Query("
-//  SELECT *
+//  SELECT `employee.hiredate`
 //  FROM `demo/employees2.xml`
 //  WHERE `employee.hiredate` BETWEEN `15-10-2000` AND `15-10-2015`
 //  ORDER BY `employee.@id` DESC
@@ -84,11 +91,16 @@ include_once "vendor/autoload.php";
 //  )
 //");
 
-$query = new \Deimos\Query("
-  SELECT array_unique(`table.column.#value.0`)
-  FROM `demo/tables.xml`
-  WHERE `table.@name` = `departments`
-");
+/**
+ * TODO
+ */
+
+// fixme
+//$query = new \Deimos\Query("
+//    SELECT `table.column.#value.0`
+//    FROM `demo/tables.xml`
+//    WHERE `table.@name` = `departments`
+//");
 
 // todo
 //$query = new Deimos\Query("

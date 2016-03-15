@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tables>
+
     <!-- Таблица departments -->
     <table name="departments">
         <column name="id">1</column>
@@ -61,6 +62,7 @@
         <column name="abbreviated">kaf_spasom</column>
         <column name="faculty_id">10</column>
     </table>
+
     <!-- Таблица faculties -->
     <table name="faculties">
         <column name="id">18</column>
@@ -134,6 +136,7 @@
         <column name="id">9</column>
         <column name="name">Факультет юридический</column>
     </table>
+
     <!-- Таблица teachers -->
     <table name="teachers">
         <column name="id">1</column>
@@ -237,7 +240,7 @@
         <column name="id">15</column>
         <column name="name">Капустин Михаил Сергеевич</column>
         <column name="department_id">2</column>
-        <column name="deleted">1</column>
+        <column name="deleted">0</column>
         <column name="professorrating">46221</column>
     </table>
     <table name="teachers">
