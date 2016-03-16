@@ -42,7 +42,7 @@ class Query
     public function execute()
     {
 
-        if ($this->execute)
+        if ($this->execute !== null)
             return $this->execute;
 
         $this->where();
@@ -418,7 +418,7 @@ class Query
                                         switch ($operator) {
 
                                             case 'BETWEEN': // (>= and <=)
-                                                $bool = $option >= $opts[0] && $options <= $opts[1];
+                                                $bool = $option >= min($opts) && $option <= max($opts);
                                                 break;
 
                                             case '=':

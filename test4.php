@@ -26,7 +26,7 @@ include "vendor/autoload.php";
 $sql = new \Deimos\Query("
   SELECT `*`
   FROM `demo/employees.xml`
-  WHERE `employee.@id` = 3
+  WHERE `employee.weight` BETWEEN 58 AND 76.2
 ");
 
 
