@@ -5,15 +5,13 @@ include "vendor/autoload.php";
 //$sql = new \Deimos\Query("
 //  SELECT `*`
 //  FROM `demo/employees.xml`
-//  WHERE (sin(2 ^ 8) * cos(`employee.@id`)) > 1
-//        AND hello(15, 99)
-//        AND min(1,2,3,4)
+//  WHERE (sin(2 ^ 8) * cos(`employee.@id`)) > 0.2
 //");
 
 //$sql = new \Deimos\Query("
 //  SELECT `*`
 //  FROM `demo/employees.xml`
-//  WHERE (sin(2 ^ 8) * cos(`employee.@id`)) > 1
+//  WHERE ((2 ^ 8) - cos(`employee.@id`)) > 1
 //");
 
 //$sql = new \Deimos\Query("
@@ -23,12 +21,29 @@ include "vendor/autoload.php";
 //    AND `employee.@id` = 3
 //");
 
+//$sql = new \Deimos\Query("
+//  SELECT `*`
+//  FROM `demo/employees.xml`
+//  WHERE `employee.weight` BETWEEN 58 AND 76.2
+//");
+
 $sql = new \Deimos\Query("
   SELECT `*`
   FROM `demo/employees.xml`
-  WHERE `employee.weight` BETWEEN 58 AND 76.2
+  WHERE (`employee.@id` % 2) = 0
 ");
 
+//$sql = new \Deimos\Query("
+//    SELECT *
+//    FROM `demo/employees.xml`
+//    WHERE `employee.firstname` = `Ivan`
+//");
+
+//$sql = new \Deimos\Query("
+//    SELECT *
+//    FROM `demo/employees.xml`
+//    WHERE `employee.lastname` LIKE upper(`ivanov`)
+//");
 
 //$sql = new \Deimos\Query("
 //  SELECT `*`

@@ -20,4 +20,10 @@
         <weight type="pound">128.5</weight>
         <bodyHeight type="m" value="1.73"/>
     </employee>
+    <employee id="66">
+        <firstname>Alex</firstname>
+        <lastname>IVANOV</lastname>
+        <weight type="pound">133</weight>
+        <bodyHeight type="m" value="1.88"/>
+    </employee>
 </employees>

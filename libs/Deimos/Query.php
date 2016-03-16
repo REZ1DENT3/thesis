@@ -109,6 +109,10 @@ class Query
             }
         }
 
+        if (count($res) == 0) {
+            $res = array($this->noQuotes($data));
+        }
+
         if (count($res) == 1) {
             reset($res);
             return current($res);
@@ -253,17 +257,57 @@ class Query
                     case ExpressionType::AGGREGATE_FUNCTION:
                     case ExpressionType::SIMPLE_FUNCTION:
 
-                        $func = $data['base_expr'];
+                        $func = mb_strtolower($data['base_expr']);
 
                         if (function_exists($func)) {
                             $parameters = array(call_user_func_array($func, $parameters));
                         }
                         else {
-                            throw new \Exception($func);
+
+                            switch ($func) {
+
+                                case 'upper':
+                                    $parameters = mb_strtoupper($parameters[0]);
+                                    break;
+
+                                case 'lower':
+                                    $parameters = mb_strtolower($parameters[0]);
+                                    break;
+
+                                case 'avg':
+                                    $parameters = array_sum($parameters[0]) / count($parameters[0]);
+                                    break;
+
+                                case 'sum':
+                                    $parameters = array_sum($parameters[0]);
+                                    break;
+
+                                case 'first':
+                                    reset($parameters);
+                                    $parameters = current($parameters[0]);
+                                    break;
+
+                                case 'last':
+                                    $parameters = end($parameters[0]);
+                                    break;
+
+                                case 'length':
+                                    $parameters = mb_strlen($parameters[0]);
+                                    break;
+
+                                case 'date':
+                                    $parameters = date('d-m-Y', strtotime($parameters[0]));
+                                    break;
+
+                                case 'datetime':
+                                    $parameters = date('d-m-Y H:i:s', strtotime($parameters[0]));
+                                    break;
+
+                                default:
+                                    throw new \Exception($func);
+                            }
                         }
 
-                        // execute
-//                        $clear = true;
                         break;
 
                 }
@@ -396,8 +440,7 @@ class Query
                                     $key => $column
                                 ));
 
-
-                                if (count($opt) == 1) {
+                                if (is_array($opt) && count($opt) == 1) {
                                     $opt = current($opt);
                                 }
 
@@ -416,6 +459,18 @@ class Query
                                         $bool = null;
 
                                         switch ($operator) {
+
+                                            case 'LIKE':
+                                                $replacePairs = array(
+                                                    '%' => '(.*?)',
+                                                    '_' => '(.)'
+                                                );
+                                                $regexp = "/^" . strtr(preg_quote($opts[0]), $replacePairs) . "$/su";
+                                                if (strpos($regexp, '(.*?)')) {
+                                                    $regexp .= 'i';
+                                                }
+                                                $bool = preg_match($regexp, $option);
+                                                break;
 
                                             case 'BETWEEN': // (>= and <=)
                                                 $bool = $option >= min($opts) && $option <= max($opts);
@@ -447,8 +502,6 @@ class Query
                                 else {
                                     $indexes[$columnIndex][] = (int)false;
                                 }
-
-
 
                             }
 

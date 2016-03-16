@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b2d15f-a590-4a89-8d53-c5d16c4595dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/employees.xml" afterPath="$PROJECT_DIR$/demo/employees.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Query.php" afterPath="$PROJECT_DIR$/libs/Deimos/Query.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test4.php" afterPath="$PROJECT_DIR$/test4.php" />
     </list>
@@ -30,19 +31,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test4.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test4.php">
+      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.0">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state vertical-scroll-proportion="33.96154">
+              <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
               <folding>
-                <marker date="1458157324076" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="72:216" placeholder="SELECT `*` F... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="257:346" placeholder="SELECT `*` F... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="387:525" placeholder="SELECT `*` F... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="562:646" placeholder="SELECT `*` F... demo/employees.xml" />
-                <marker date="1458157324076" expanded="true" signature="686:773" placeholder="SELECT `*` F... demo/employees.xml" />
+                <element signature="e#26#51#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,20 +46,27 @@
       <file leaf-file-name="employees.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/employees.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="21" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+      <file leaf-file-name="test4.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test4.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30645162">
-              <caret line="420" column="88" selection-start-line="420" selection-start-column="88" selection-end-line="420" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.9086022">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#26#51#0#PHP" expanded="true" />
+                <marker date="1458160995096" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="72:163" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="204:290" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="331:469" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="510:598" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="635:706" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="872:965" placeholder="SELECT * FRO... demo/employees.xml" />
+                <marker date="1458160995096" expanded="true" signature="1006:1093" placeholder="SELECT `*` F... demo/employees.xml" />
               </folding>
             </state>
           </provider>
@@ -121,14 +123,14 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
-        <option value="$PROJECT_DIR$/demo/employees.xml" />
         <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
         <option value="$PROJECT_DIR$/libs/old/Query.php" />
         <option value="$PROJECT_DIR$/libs/old/Parser.php" />
         <option value="$PROJECT_DIR$/libs/old/SemanticParser.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
-        <option value="$PROJECT_DIR$/test4.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
+        <option value="$PROJECT_DIR$/demo/employees.xml" />
+        <option value="$PROJECT_DIR$/test4.php" />
       </list>
     </option>
   </component>
@@ -371,13 +373,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/greenlion/php-sql-parser/tests/tests-creator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/greenlion/php-sql-parser/tests/tests-parser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.985663">
@@ -739,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/old/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4874552">
-          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03046595">
@@ -765,36 +750,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/employees.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_standard_manual.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.21326165">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test4.php">
+    <entry file="file://$PROJECT_DIR$/libs/old/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.6862004">
+          <caret line="402" column="21" selection-start-line="361" selection-start-column="20" selection-end-line="402" selection-end-column="21" />
           <folding>
-            <marker date="1458157324076" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="72:216" placeholder="SELECT `*` F... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="257:346" placeholder="SELECT `*` F... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="387:525" placeholder="SELECT `*` F... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="562:646" placeholder="SELECT `*` F... demo/employees.xml" />
-            <marker date="1458157324076" expanded="true" signature="686:773" placeholder="SELECT `*` F... demo/employees.xml" />
+            <element signature="e#23#65#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30645162">
-          <caret line="420" column="88" selection-start-line="420" selection-start-column="88" selection-end-line="420" selection-end-column="88" />
+        <state vertical-scroll-proportion="33.96154">
+          <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
           <folding>
             <element signature="e#26#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/employees.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9086022">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <marker date="1458160995096" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="72:163" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="204:290" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="331:469" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="510:598" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="635:706" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="872:965" placeholder="SELECT * FRO... demo/employees.xml" />
+            <marker date="1458160995096" expanded="true" signature="1006:1093" placeholder="SELECT `*` F... demo/employees.xml" />
           </folding>
         </state>
       </provider>
