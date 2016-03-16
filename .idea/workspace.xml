@@ -2,82 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b2d15f-a590-4a89-8d53-c5d16c4595dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/namespace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/simple.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Deimos/XMLBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/old/Query.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/old/SemanticParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test4.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/test.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/arr/ArrHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/arr/arguments/ArrArguments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/arr/arguments/ArrArgumentsDescriptor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/exception/CssException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/CssParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/CssParserHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorAdjacent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorChild.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorDescendant.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorFactory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorGeneral.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/combinator/CssParserCombinatorUserDefined.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/exception/CssParserException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterAttr.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterId.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoEq.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoEven.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoFactory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoFirst.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoFirstChild.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoGt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoLast.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoLt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoNot.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoNthChild.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoOdd.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/filter/CssParserFilterPseudoUserDefined.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/model/CssParserModelElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/model/CssParserModelFactor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/parser/model/CssParserModelSelector.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/DomHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeAttributeCapable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeClassCapable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeContentCapable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeCssCapable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeDataCapable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/DomNodeIterable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dom/node/exception/DomNodeException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/cmd/SysCmd.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/cmd/SysCmdArgument.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/cmd/SysCmdArgumentsParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/cmd/SysCmdHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/cmd/exception/SysCmdException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/exception/SysException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sys/file/SysFileHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/text/TextHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/text/exception/TextException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/text/parser/TextParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/text/parser/exception/TextParserException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/text/tokenizer/TextTokenizer.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/employees.xml" afterPath="$PROJECT_DIR$/demo/employees.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/ArrayObject.php" afterPath="$PROJECT_DIR$/libs/Deimos/ArrayObject.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Query.php" afterPath="$PROJECT_DIR$/libs/Deimos/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/QueryParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Semantic.php" afterPath="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libs/Deimos/Parser.php" afterPath="$PROJECT_DIR$/libs/old/Parser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test4.php" afterPath="$PROJECT_DIR$/test4.php" />
     </list>
     <ignored path="xmlparser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,11 +30,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test4.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test4.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.653846">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+              <folding>
+                <marker date="1458153654932" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="72:216" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="257:346" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="387:525" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="562:655" placeholder="SELECT `*` F... demo/employees.xml" />
+                <marker date="1458153654932" expanded="true" signature="695:782" placeholder="SELECT `*` F... demo/employees.xml" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="employees.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/employees.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -116,23 +61,10 @@
       <file leaf-file-name="Query.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57706094">
-              <caret line="136" column="25" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.5125448">
+              <caret line="332" column="30" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
               <folding>
                 <element signature="e#26#51#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test4.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test4.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="25" />
-              <folding>
-                <marker date="1458114083954" expanded="true" signature="68:87" placeholder="SELECT floor... demo/employees.xml" />
-                <marker date="1458114083954" expanded="true" signature="68:204" placeholder="SELECT `*` F... demo/employees.xml" />
               </folding>
             </state>
           </provider>
@@ -191,10 +123,10 @@
         <option value="$PROJECT_DIR$/libs/Deimos/QueryParser.php" />
         <option value="$PROJECT_DIR$/demo/employees.xml" />
         <option value="$PROJECT_DIR$/libs/Deimos/Semantic.php" />
-        <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
         <option value="$PROJECT_DIR$/libs/old/Query.php" />
         <option value="$PROJECT_DIR$/libs/old/Parser.php" />
         <option value="$PROJECT_DIR$/libs/old/SemanticParser.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
         <option value="$PROJECT_DIR$/test4.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
       </list>
@@ -401,7 +333,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -634,7 +566,7 @@
         <state vertical-scroll-proportion="0.17202269">
           <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
           <folding>
-            <element signature="e#271#283#0#PHP" expanded="true" />
+            <element signature="e#271#283#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,7 +594,7 @@
         <state vertical-scroll-proportion="0.609319">
           <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
           <folding>
-            <element signature="e#1871#1917#0#PHP" expanded="true" />
+            <element signature="e#1871#1917#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -705,14 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3655914">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/ArrayObject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63978493">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -770,7 +694,7 @@
         <state vertical-scroll-proportion="-0.36379927">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <element signature="e#6#1873#0#PHP" expanded="true" />
+            <element signature="e#6#1873#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -791,22 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jlawrence/eos/src/Stack.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/old/SemanticParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0609319">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/old/Parser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0609319">
@@ -815,10 +723,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jlawrence/eos/src/Stack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51792115">
+          <caret line="17" column="11" selection-start-line="16" selection-start-column="6" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/old/SemanticParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.143369">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libs/old/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03046595">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
+        <state vertical-scroll-proportion="-0.4874552">
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
           <folding>
             <element signature="e#23#65#0#PHP" expanded="true" />
           </folding>
@@ -827,35 +751,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1218638">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.03046595">
+          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/ArrayObject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8530466">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/employees.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="25" />
+        <state vertical-scroll-proportion="-11.653846">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
-            <marker date="1458114083954" expanded="true" signature="68:87" placeholder="SELECT floor... demo/employees.xml" />
-            <marker date="1458114083954" expanded="true" signature="68:204" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="72:216" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="257:346" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="387:525" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="562:655" placeholder="SELECT `*` F... demo/employees.xml" />
+            <marker date="1458153654932" expanded="true" signature="695:782" placeholder="SELECT `*` F... demo/employees.xml" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57706094">
-          <caret line="136" column="25" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.5125448">
+          <caret line="332" column="30" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
           <folding>
             <element signature="e#26#51#0#PHP" expanded="true" />
           </folding>

@@ -80,14 +80,39 @@ class Query
 
     }
 
+    private function getInArray($column, $data)
+    {
+
+        $columnObject = new ArrayObject($column);
+        $res = $columnObject->get($this->noQuotes($data));
+
+        foreach ($res as &$r) {
+            if (isset($r['#value'])) {
+                $r = array($r['#value']['value']);
+            }
+            else if (isset($r['nodevalue'])) {
+                $r = array($r['nodevalue']);
+            }
+        }
+
+        if (count($res) == 1) {
+            reset($res);
+            return current($res);
+        }
+
+        return $res;
+
+    }
+
     /**
-     * @param $options
-     * @param $semantic SemanticParser
+     * @param array $options
+     * @param array $column
      * @param Stack|null $stack
      * @param bool $first
-     * @return array
+     * @return array|mixed
+     * @throws \Exception
      */
-    private function parsingOfData($options, $semantic, Stack &$stack = null, $first = true)
+    private function parsingOfData($options, $column, Stack &$stack = null, $first = true)
     {
 
         if (!$stack) {
@@ -96,15 +121,77 @@ class Query
 
         foreach ($options as $option) {
 
-            if ($option['expr_type'] !== ExpressionType::BRACKET_EXPRESSION)
+            if (!isset($option['expr_type'])) {
+                return array($option['expr_type']);
+            }
+
+            if ($option['expr_type'] !== ExpressionType::BRACKET_EXPRESSION) {
                 $stack->push($option);
+            }
+            else {
+                $result = null;
+                try {
+                    $result = Parser::solve($option['base_expr']);
+                }
+                catch (\Exception $e) {
+
+                    $colref = array();
+
+                    $tree = new ArrayObject(array('s' => $option));
+                    $subTree = array();
+
+                    while ($subs = $tree->get('s.sub_tree')) {
+
+                        if (!is_array($subs)) {
+                            continue;
+                        }
+
+                        $temp = array();
+                        foreach ($subs as $key => $sub) {
+                            if ($sub == false) {
+                                unset($subs[$key]);
+                                continue;
+                            }
+                            if (is_array($sub)) {
+                                $temp = array_merge($temp, $sub);
+                                $subTree = array_merge($subTree, $sub);
+                            }
+                        }
+
+                        $tree = new ArrayObject(array('s' => $temp));
+
+                    }
+
+                    foreach ($subTree as $sub) {
+
+                        if ($sub['expr_type'] == ExpressionType::COLREF && !$this->isOperator($sub)) {
+                            $key = $this->noQuotes($sub);
+                            $key = str_replace('.', 'AT', $key);
+                            $key = str_replace('@', 'DOG', $key);
+                            $colref[$key] = $this->getInArray($column, $sub);
+                        }
+
+                    }
+
+                    $key = str_replace('.', 'AT', $option['base_expr']);
+                    $key = str_replace('@', 'DOG', $key);
+                    $key = str_replace('`', '', $key);
+
+                    $result = Parser::solve($key, $colref);
+
+                }
+
+                return array($result);
+
+            }
 
             if ($option['sub_tree']) {
 
-                if ($option['expr_type'] == ExpressionType::EXPRESSION)
+                if ($option['expr_type'] == ExpressionType::EXPRESSION) {
                     continue;
+                }
 
-                $this->parsingOfData($option['sub_tree'], $semantic, $stack, false);
+                $this->parsingOfData($option['sub_tree'], $column, $stack, false);
 
             }
 
@@ -120,8 +207,6 @@ class Query
 
                 $data = $stack->pop();
 
-                var_dump($data);
-
                 switch ($data['expr_type']) {
 
                     case ExpressionType::CONSTANT:
@@ -130,7 +215,7 @@ class Query
 
                     case ExpressionType::COLREF:
                         if (!$this->isOperator($data)) {
-                            $parameters[] = $semantic->get($this->noQuotes($data));
+                            $parameters[] = $this->getInArray($column, $data);
                         }
                         else {
                             $parameters[] = $this->noQuotes($data);
@@ -153,14 +238,40 @@ class Query
 
                     case ExpressionType::AGGREGATE_FUNCTION:
                     case ExpressionType::SIMPLE_FUNCTION:
+
+                        $func = $data['base_expr'];
+
+                        if (function_exists($func)) {
+                            $parameters = array(call_user_func_array($func, $parameters));
+                        }
+                        else {
+                            throw new \Exception($func);
+                        }
+
                         // execute
-                        $clear = true;
+//                        $clear = true;
                         break;
 
                 }
 
                 if ($isOperator) {
-                    $parameters = array(Parser::solve(implode($parameters)));
+
+                    $toParser = true;
+                    foreach ($parameters as $parameter) {
+                        if (is_array($parameter) || is_object($parameter)) {
+                            $toParser = false;
+                            break;
+                        }
+                    }
+
+                    if ($toParser) {
+                        $parameters = array_reverse($parameters);
+                        $parameters = array(Parser::solve(implode($parameters)));
+                    }
+                    else {
+                        //
+                    }
+
                 }
 
                 if ($clear) {
@@ -171,6 +282,9 @@ class Query
                 $isOperator = $this->isOperator($data);
 
             }
+
+            return $parameters;
+
         }
 
         return array();
@@ -184,7 +298,7 @@ class Query
             return $this->storage['WHERE'];
         }
 
-        $from = current($this->from());
+        $from = current($this->from()); // fixme
         $semantic = new SemanticParser($from['data']);
 
         $where = $this->parser->where();
@@ -193,9 +307,172 @@ class Query
 
             $this->storage['WHERE'] = array();
 
-            foreach ($where as $options) {
-                var_dump($this->parsingOfData(array($options), $semantic));
-                die;
+            $maxCount = count($where) - 1;
+
+            $indexes = array(); // result
+
+            foreach ($semantic->getStorage() as $key => $columns) {
+
+                foreach ($columns as $columnIndex => $column) {
+
+                    if (!isset($indexes[$columnIndex])) {
+                        $indexes[$columnIndex] = array();
+                    }
+
+                    // elements -> element
+                    for ($ind = 0; $ind <= $maxCount; ++$ind) {
+
+                        $opts = array();
+
+                        $operators = array();
+                        $options = $where[$ind];
+
+                        if ($ind == $maxCount) {
+                            $isOperator = true;
+                        }
+                        else {
+
+                            $operators = $where[++$ind];
+
+                            $isOperator = $this->isOperator($operators);
+
+                            if ($isOperator) {
+
+                                $operators = array($operators['base_expr']);
+                                $opts[] = $where[++$ind];
+
+                                switch ($operators[0]) {
+
+                                    case 'BETWEEN':
+                                        ++$ind;
+                                        $opts[] = $where[++$ind];
+                                        break;
+
+                                    case 'IN':
+                                        $operators = array('=');
+                                        break;
+
+                                    case '<=':
+                                        $operators = array('<', '=');
+                                        break;
+
+                                    case '>=':
+                                        $operators = array('>', '=');
+                                        break;
+
+                                    case 'IS':
+                                        $operators[0] = '=';
+                                        if (end($opts) == 'NOT') {
+                                            $operators = array('!=');
+                                            $opts[key($opts)] = $where[++$ind];
+                                        }
+                                        break;
+
+                                }
+
+                            }
+                        }
+
+                        $options = $this->parsingOfData(array($options), array(
+                            $key => $column
+                        ));
+
+                        if (count($options) == 1) {
+                            $options = current($options);
+                        }
+
+                        if ($isOperator) {
+
+                            foreach ($opts as &$opt) {
+
+                                $opt = $this->parsingOfData(array($opt), array(
+                                    $key => $column
+                                ));
+
+
+                                if (count($opt) == 1) {
+                                    $opt = current($opt);
+                                }
+
+                            }
+
+                            foreach ($operators as $operator) {
+
+                                if (!is_array($options)) {
+                                    $options = array($options);
+                                }
+
+                                foreach ($options as $option) {
+
+                                    $bool = null;
+
+                                    switch ($operator) {
+
+                                        case 'BETWEEN': // (>= and <=)
+                                            $bool = $option >= $opts[0] && $options <= $opts[1];
+                                            break;
+
+                                        case '=':
+                                            $bool = in_array($option, $opts);
+                                            break;
+
+                                        case '!=':
+                                            $bool = !in_array($option, $opts);
+                                            break;
+
+                                        case '<':
+                                            $bool = $option < min($opts);
+                                            break;
+
+                                        case '>':
+                                            $bool = $option > max($opts);
+                                            break;
+
+                                    }
+
+                                    $indexes[$columnIndex][] = (int)$bool;
+
+                                }
+
+                            }
+
+                        }
+
+                        if ($oper = $where[$ind++]) {
+                            $oper = mb_strtoupper($this->noQuotes($oper));
+                            if (in_array($oper, array('AND', 'OR'))) {
+                                $indexes[$columnIndex][] = $oper;
+                            }
+                        }
+
+                    }
+
+                    foreach ($indexes as $index => $res) {
+                        for ($i = 0; $i < count($res); $i += 3) {
+                            if ($res[$i + 2]) {
+                                if ($res[$i + 1] == 'OR') {
+                                    $indexes[$index] = $res[$i] || $res[$i + 2];
+                                }
+                                else if ($res[$i + 1] == 'AND') {
+                                    $indexes[$index] = $res[$i] && $res[$i + 2];
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                var_dump($indexes);
+
+                foreach ($indexes as $index => $res) {
+                    if (is_array($res)) {
+                        $res = array_sum($res);
+                    }
+                    if ((int)$res) {
+                        $this->storage['WHERE'][$key][$index] = $columns[$index];
+                    }
+                }
+
             }
 
             return $this->storage['WHERE'];

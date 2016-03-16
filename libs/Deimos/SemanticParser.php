@@ -96,7 +96,7 @@ class SemanticParser
     }
 
     /**
-     * @return ArrayObject
+     * @return array
      */
     public function getStorage()
     {
