@@ -26,9 +26,7 @@ include "vendor/autoload.php";
 $sql = new \Deimos\Query("
   SELECT `*`
   FROM `demo/employees.xml`
-  WHERE `employee.age` < 45
-    AND `employee.@id` = 3
-    OR `employee.@id` != 3
+  WHERE `employee.@id` = 3
 ");
 
 
@@ -38,4 +36,4 @@ $sql = new \Deimos\Query("
 //  WHERE (sin(2 ^ 8) * `employee.@id`) < 0.07
 //");
 
-var_dump($sql->where());
+var_dump($sql->execute());

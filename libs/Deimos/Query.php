@@ -25,6 +25,11 @@ class Query
     protected $storage = array();
 
     /**
+     * @var array
+     */
+    protected $execute = null;
+
+    /**
      * Query constructor.
      * @param $sql
      */
@@ -36,6 +41,15 @@ class Query
 
     public function execute()
     {
+
+        if ($this->execute)
+            return $this->execute;
+
+        $this->where();
+        $data = $this->storage['WHERE'];
+
+        $this->execute = $data;
+        return $this->execute();
 
     }
 
@@ -291,7 +305,7 @@ class Query
 
     }
 
-    public function where()
+    private function where()
     {
 
         if (isset($this->storage['WHERE'])) {
@@ -463,6 +477,9 @@ class Query
                             else if ($boolean[$i + 1] == 'AND') {
                                 $indexes[$index] = $boolean[$i] && $boolean[$i + 2];
                             }
+                        }
+                        else {
+                            $indexes[$index] = (bool)$boolean[$i];
                         }
                     }
                 }
