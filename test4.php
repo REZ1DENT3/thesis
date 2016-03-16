@@ -27,10 +27,20 @@ include "vendor/autoload.php";
 //  WHERE `employee.weight` BETWEEN 58 AND 76.2
 //");
 
+//$sql = new \Deimos\Query("
+//  SELECT `*`
+//  FROM `demo/employees.xml`
+//  WHERE (`employee.@id` % 2) = 0
+//");
+
 $sql = new \Deimos\Query("
   SELECT `*`
-  FROM `demo/employees.xml`
-  WHERE (`employee.@id` % 2) = 0
+  FROM (
+      SELECT `*`
+      FROM `demo/employees.xml`
+      WHERE (`employee.@id` % 2) = 0
+  )
+  WHERE `employee.age` < 22
 ");
 
 //$sql = new \Deimos\Query("

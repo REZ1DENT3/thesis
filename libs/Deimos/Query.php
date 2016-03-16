@@ -361,9 +361,9 @@ class Query
 
         $where = $this->parser->where();
 
-        if (count($where)) {
+        $this->storage['WHERE'] = array();
 
-            $this->storage['WHERE'] = array();
+        if (count($where)) {
 
             $maxCount = count($where) - 1;
 
@@ -545,11 +545,13 @@ class Query
 
             }
 
-            return $this->storage['WHERE'];
-
+        }
+        else {
+            // fixme
+            $this->storage['WHERE'] = &$from['data'];
         }
 
-        throw new \Exception(__FUNCTION__);
+        return $this->storage['WHERE'];
 
     }
 
@@ -579,6 +581,11 @@ class Query
 
                 if ($alias == 'dual') {
                     $this->storage['FROM'][$alias]['string'] = $alias;
+                }
+                else if ($options['expr_type'] == ExpressionType::SUBQUERY) {
+                    $this->storage['FROM'][$alias]['string'] = $options['base_expr'];
+                    $this->storage['FROM'][$alias]['data'] = (new self(trim($options['base_expr'], '()')))
+                        ->execute();
                 }
                 else {
                     $this->storage['FROM'][$alias]['string'] = $this->noQuotes($options, 'table');
