@@ -3,7 +3,7 @@
     <employee id="3">
         <firstname>Mikael</firstname>
         <lastname>Ronstrom</lastname>
-        <weight type="g">55017</weight>
+        <column name="weight" type="g">55017</column>
         <body-height type="mm">2013.93</body-height>
         <age type="week">2288</age>
     </employee>

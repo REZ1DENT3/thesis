@@ -1,0 +1,2 @@
+https://msdn.microsoft.com/en-us/library/aa468565.aspx
+http://examples.oreilly.com/9780596002527/namespaces.html

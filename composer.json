@@ -1,7 +1,6 @@
 {
   "autoload": {
     "psr-0": {
-      "com\\soloproyectos\\common": "src/",
       "": "libs/"
     }
   },
@@ -9,6 +8,8 @@
     "php": ">=5.5.0",
     "triplepoint/php-units-of-measure": "^2.0",
     "thapp/xmlbuilder": "^0.1.4",
-    "greenlion/php-sql-parser": "^4.0"
+    "greenlion/php-sql-parser": "^4.0",
+    "aboyadzhiev/php-math-parser": "dev-master",
+    "jlawrence/eos": "^3.2"
   }
 }

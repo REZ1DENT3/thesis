@@ -1,6 +1,6 @@
 <?php
 
-namespace Deimos;
+namespace old;
 
 class Parser extends \SimpleXMLElement
 {

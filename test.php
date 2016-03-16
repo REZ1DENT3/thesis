@@ -12,6 +12,15 @@ if (isset($_GET['file'])) {
 $xml = $xmlBuilder->loadXML(file_get_contents("demo/$file"), true);
 $arrayObject = new \Deimos\ArrayObject($xmlBuilder->toArray($xml));
 
-$ids = $arrayObject->get('employees.employee.@id');
+$idList = $arrayObject
+    ->get('employees.employee.@id');
 
-var_dump($ids);
+function avg($param)
+{
+    if (is_array($param)) {
+        return array_sum($param) / count($param);
+    }
+    return false;
+}
+
+var_dump(avg($idList));

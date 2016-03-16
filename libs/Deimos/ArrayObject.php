@@ -20,7 +20,7 @@ class ArrayObject extends \ArrayObject
     }
 
     /**
-     * @param string $path
+     * @param string|array $path
      * @param int $index
      * @param null $self
      * @param array $data
