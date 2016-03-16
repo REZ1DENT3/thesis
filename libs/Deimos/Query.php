@@ -323,54 +323,47 @@ class Query
                     for ($ind = 0; $ind <= $maxCount; ++$ind) {
 
                         $opts = array();
-
                         $operators = array();
+
                         $options = $where[$ind];
+                        $operator = $where[++$ind];
 
-                        if ($ind == $maxCount) {
-                            $isOperator = true;
-                        }
-                        else {
+                        $isOperator = $this->isOperator($operator);
 
-                            $operators = $where[++$ind];
+                        if ($isOperator) {
 
-                            $isOperator = $this->isOperator($operators);
+                            $operators = array($operator['base_expr']);
+                            $opts[] = $where[++$ind];
 
-                            if ($isOperator) {
+                            switch ($operators[0]) {
 
-                                $operators = array($operators['base_expr']);
-                                $opts[] = $where[++$ind];
+                                case 'BETWEEN':
+                                    ++$ind;
+                                    $opts[] = $where[++$ind];
+                                    break;
 
-                                switch ($operators[0]) {
+                                case 'IN':
+                                    $operators = array('=');
+                                    break;
 
-                                    case 'BETWEEN':
-                                        ++$ind;
-                                        $opts[] = $where[++$ind];
-                                        break;
+                                case '<=':
+                                    $operators = array('<', '=');
+                                    break;
 
-                                    case 'IN':
-                                        $operators = array('=');
-                                        break;
+                                case '>=':
+                                    $operators = array('>', '=');
+                                    break;
 
-                                    case '<=':
-                                        $operators = array('<', '=');
-                                        break;
-
-                                    case '>=':
-                                        $operators = array('>', '=');
-                                        break;
-
-                                    case 'IS':
-                                        $operators[0] = '=';
-                                        if (end($opts) == 'NOT') {
-                                            $operators = array('!=');
-                                            $opts[key($opts)] = $where[++$ind];
-                                        }
-                                        break;
-
-                                }
+                                case 'IS':
+                                    $operators[0] = '=';
+                                    if (end($opts) == 'NOT') {
+                                        $operators = array('!=');
+                                        $opts[key($opts)] = $where[++$ind];
+                                    }
+                                    break;
 
                             }
+
                         }
 
                         $options = $this->parsingOfData(array($options), array(
@@ -402,43 +395,55 @@ class Query
                                     $options = array($options);
                                 }
 
-                                foreach ($options as $option) {
+                                if (count($options)) {
 
-                                    $bool = null;
+                                    foreach ($options as $option) {
 
-                                    switch ($operator) {
+                                        $bool = null;
 
-                                        case 'BETWEEN': // (>= and <=)
-                                            $bool = $option >= $opts[0] && $options <= $opts[1];
-                                            break;
+                                        switch ($operator) {
 
-                                        case '=':
-                                            $bool = in_array($option, $opts);
-                                            break;
+                                            case 'BETWEEN': // (>= and <=)
+                                                $bool = $option >= $opts[0] && $options <= $opts[1];
+                                                break;
 
-                                        case '!=':
-                                            $bool = !in_array($option, $opts);
-                                            break;
+                                            case '=':
+                                                $bool = in_array($option, $opts);
+                                                break;
 
-                                        case '<':
-                                            $bool = $option < min($opts);
-                                            break;
+                                            case '!=':
+                                                $bool = !in_array($option, $opts);
+                                                break;
 
-                                        case '>':
-                                            $bool = $option > max($opts);
-                                            break;
+                                            case '<':
+                                                $bool = $option < min($opts);
+                                                break;
+
+                                            case '>':
+                                                $bool = $option > max($opts);
+                                                break;
+
+                                        }
+
+                                        $indexes[$columnIndex][] = (int)$bool;
 
                                     }
 
-                                    $indexes[$columnIndex][] = (int)$bool;
-
                                 }
+                                else {
+                                    $indexes[$columnIndex][] = (int)false;
+                                }
+
+
 
                             }
 
                         }
+                        else {
+                            $indexes[$columnIndex][] = (bool)$options;
+                        }
 
-                        if ($oper = $where[$ind++]) {
+                        if ($oper = $where[++$ind]) {
                             $oper = mb_strtoupper($this->noQuotes($oper));
                             if (in_array($oper, array('AND', 'OR'))) {
                                 $indexes[$columnIndex][] = $oper;
@@ -447,28 +452,23 @@ class Query
 
                     }
 
-                    foreach ($indexes as $index => $res) {
-                        for ($i = 0; $i < count($res); $i += 3) {
-                            if ($res[$i + 2]) {
-                                if ($res[$i + 1] == 'OR') {
-                                    $indexes[$index] = $res[$i] || $res[$i + 2];
-                                }
-                                else if ($res[$i + 1] == 'AND') {
-                                    $indexes[$index] = $res[$i] && $res[$i + 2];
-                                }
+                }
+
+                foreach ($indexes as $index => $boolean) {
+                    for ($i = 0; $i < count($boolean); $i += 3) {
+                        if ($boolean[$i + 2] !== null) {
+                            if ($boolean[$i + 1] == 'OR') {
+                                $indexes[$index] = $boolean[$i] || $boolean[$i + 2];
+                            }
+                            else if ($boolean[$i + 1] == 'AND') {
+                                $indexes[$index] = $boolean[$i] && $boolean[$i + 2];
                             }
                         }
                     }
-
                 }
 
-                var_dump($indexes);
-
-                foreach ($indexes as $index => $res) {
-                    if (is_array($res)) {
-                        $res = array_sum($res);
-                    }
-                    if ((int)$res) {
+                foreach ($indexes as $index => $boolean) {
+                    if ($boolean) {
                         $this->storage['WHERE'][$key][$index] = $columns[$index];
                     }
                 }

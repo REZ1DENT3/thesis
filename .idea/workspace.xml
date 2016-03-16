@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b2d15f-a590-4a89-8d53-c5d16c4595dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Query.php" afterPath="$PROJECT_DIR$/libs/Deimos/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test4.php" afterPath="$PROJECT_DIR$/test4.php" />
     </list>
     <ignored path="xmlparser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="test4.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test4.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.653846">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state vertical-scroll-proportion="-11.0">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <marker date="1458153654932" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
                 <marker date="1458153654932" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
@@ -61,8 +59,8 @@
       <file leaf-file-name="Query.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5125448">
-              <caret line="332" column="30" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.025089607">
+              <caret line="468" column="0" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
               <folding>
                 <element signature="e#26#51#0#PHP" expanded="true" />
               </folding>
@@ -333,7 +331,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -775,8 +773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.653846">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="27" />
           <folding>
             <marker date="1458153654932" expanded="true" signature="72:93" placeholder="SELECT floor... demo/employees.xml" />
             <marker date="1458153654932" expanded="true" signature="72:161" placeholder="SELECT `*` F... demo/employees.xml" />
@@ -791,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5125448">
-          <caret line="332" column="30" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.025089607">
+          <caret line="468" column="0" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
           <folding>
             <element signature="e#26#51#0#PHP" expanded="true" />
           </folding>
