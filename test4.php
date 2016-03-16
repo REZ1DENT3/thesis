@@ -28,6 +28,7 @@ $sql = new \Deimos\Query("
   FROM `demo/employees.xml`
   WHERE `employee.age` < 45
     AND `employee.@id` = 3
+    OR `employee.@id` != 3
 ");
 
 

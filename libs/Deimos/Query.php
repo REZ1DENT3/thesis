@@ -455,7 +455,7 @@ class Query
                 }
 
                 foreach ($indexes as $index => $boolean) {
-                    for ($i = 0; $i < count($boolean); $i += 3) {
+                    for ($i = 0; $i < count($boolean); $i += 2) {
                         if ($boolean[$i + 2] !== null) {
                             if ($boolean[$i + 1] == 'OR') {
                                 $indexes[$index] = $boolean[$i] || $boolean[$i + 2];
