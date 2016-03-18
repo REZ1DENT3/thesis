@@ -22,6 +22,7 @@ class ArrayObject extends \ArrayObject
     {
 
         if ($a === null && $b === null) return 0;
+
         if ($a === null) return 1;
         if ($b === null) return -1;
 
@@ -47,7 +48,7 @@ class ArrayObject extends \ArrayObject
      */
     private function calcDef($def)
     {
-        return 2 - (3 >> ($def === self::ASC));
+       return 2 - (3 >> (mb_strtoupper($def) === self::ASC));
     }
 
     /**
@@ -69,10 +70,12 @@ class ArrayObject extends \ArrayObject
 
             $c = (new self($a))->get($path);
             $d = (new self($b))->get($path);
-            
-            $e = (new self($c[0]))->get('#value.value');
-            $f = (new self($d[0]))->get('#value.value');
-            
+
+            if (!count($c) || !count($d)) return 0;
+
+            $e = (new self($c))->get('#value.value');
+            $f = (new self($d))->get('#value.value');
+
             if ($e[0] !== null && $f[0] !== null)
                 return $this->cmp($e[0], $f[0]);
 
@@ -105,12 +108,20 @@ class ArrayObject extends \ArrayObject
             $path = explode('.', $path);
         }
 
+        $count = count($path) - 1;
+
+        $asterisk = end($path) == '*';
+        if ($asterisk) {
+            unset($path[$count]);
+            $count--;
+        }
+
         if (!$self) {
             $self = (array)$this;
         }
 
         if (isset($self[$path[$index]])) {
-            if ($index == (count($path) - 1)) {
+            if ($index == $count) {
                 $data[] = $self[$path[$index]];
             }
             else {
@@ -120,6 +131,12 @@ class ArrayObject extends \ArrayObject
         else if (is_array($self) && $this->checkKeysIsNumber($self)) {
             foreach ($self as $value) {
                 $this->get($path, $index, $value, $data);
+            }
+        }
+
+        if (($index == $count) && $asterisk) {
+            if (count($data) == 1) {
+                $data = current($data);
             }
         }
 

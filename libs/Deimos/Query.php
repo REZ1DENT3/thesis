@@ -77,7 +77,12 @@ class Query
                 $saveKey = key($orderBy);
                 $orderBy = current($orderBy);
                 $path = explode('.', $path);
-                unset($path[0]);
+                if (count($path) > 1) {
+                    unset($path[0]);
+                }
+                else {
+                    unset($saveKey);
+                }
                 $path = implode('.', $path);
             }
 
@@ -141,7 +146,7 @@ class Query
 
     }
 
-    private function getInArray($column, $data)
+    private function getInArray($column, $data, $toCurrent = true)
     {
 
         $columnObject = new ArrayObject($column);
@@ -160,9 +165,11 @@ class Query
             $res = array($this->noQuotes($data));
         }
 
-        if (count($res) == 1) {
-            reset($res);
-            return current($res);
+        if ($toCurrent) {
+            if (count($res) == 1) {
+                reset($res);
+                return current($res);
+            }
         }
 
         return $res;
@@ -411,17 +418,88 @@ class Query
         $order = $this->storage['ORDER'];
         $select = &$this->storage['SELECT'];
 
-        foreach ($this->parser->select() as $column) {
+        $_select = $this->parser->select();
+        $count = count($_select);
+        $toCurrent = $count <= 1;
+
+        foreach ($_select as $column) {
+
             $obj = new ArrayObject($order);
             $c = $this->noQuotes($column);
-            if ($c == '*') {
-                $obj = $obj->getArrayCopy();
+
+            if ($column['expr_type'] == ExpressionType::EXPRESSION) {
+                $obj = [];
+                $temp = $order;
+                if (count($temp) === 1) {
+                    $temp = current($temp);
+                    if (count($temp) === 0)
+                        $temp = $order;
+                }
+                foreach ($temp as $key => $o) {
+                    foreach ($column['sub_tree'] as $col) {
+                        if ($col['expr_type'] == ExpressionType::SUBQUERY) {
+                            $obj[$key] = (new self(trim($col['base_expr'], '()')))
+                                ->execute();
+                        }
+                    }
+                }
             }
             else {
-                // todo
-                $obj = array();
+                if ($c == '*') {
+                    $obj = $obj->getArrayCopy();
+                }
+                else {
+
+                    $obj = $this->getInArray($obj, $column, $toCurrent);
+
+                    if (!$toCurrent) {
+                        foreach ($obj as &$o) {
+                            if (is_array($o) && count($o) === 1) {
+                                $o = current($o);
+                            }
+                        }
+                    }
+
+                }
             }
-            $select = array_merge($select, $obj);
+
+
+            if ($column['alias']) {
+                $alias = $this->noQuotes($column['alias']);
+            }
+            else {
+                $alias = explode('.', $c);
+                $alias = end($alias);
+            }
+
+            if ($toCurrent) {
+                $select = $obj;
+            }
+            else {
+                foreach ($obj as $key => $sel) {
+
+                    if ($sel === null) continue;
+
+                    if (!is_array($select[$key])) {
+                        if ($select[$key]) {
+                            $select[$key] = array($select[$key]);
+                        }
+                        else {
+                            $select[$key] = array();
+                        }
+                    }
+
+                    if ($alias == '*') {
+                        $select[$key][] = $sel;
+                    }
+                    else {
+                        $select[$key][$alias] = $sel;
+                    }
+
+                }
+            }
+
+
         }
 
         return $select;
@@ -679,9 +757,10 @@ class Query
                     $this->xmlBuilder->loadXml($this->storage['FROM'][$alias]['string']);
                     $this->storage['FROM'][$alias]['data'] = current($this->xmlBuilder->asArray());
                 };
+
                 if (!$this->storage['FROM'][$alias]['data']) {
                     $this->storage['FROM'][$alias]['data'] = array(
-                        $alias => array(
+                        'tmp' => array(
                             'rand' => (mt_rand(0, 1) ? -1 : 1) * mt_rand(0, mt_getrandmax()),
                             'time' => time()
                         )

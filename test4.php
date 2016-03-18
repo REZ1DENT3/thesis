@@ -44,17 +44,41 @@ include "vendor/autoload.php";
 //");
 
 //$sql = new \Deimos\Query("
-//  SELECT avg(`*`)
+//  SELECT  `employee.@id` id,
+//          `employee.firstname`,
+//          `employee.lastname`,
+//          `employee.age`,
+//          `employee.length`,
+//          `employee.length.#value.type` `lengthType`,
+//          (SELECT `tmp.rand` FROM `dual`) `rand`
 //  FROM `demo/employees.xml`
 //  WHERE (`employee.@id` % 2) = 0 AND `employee.age`
-//  ORDER BY `employee.length`
+//  ORDER BY `employee.length` DESC
 //");
-
 
 $sql = new \Deimos\Query("
   SELECT `*`
-  FROM `dual`
+  FROM 
+    (SELECT  
+          `employee.@id` `id`, 
+          `employee.firstname`, 
+          `employee.lastname`, 
+          `employee.age`,
+          `employee.length`,
+          `employee.length.#value.type` `lengthType`,
+          (SELECT `tmp.rand` FROM `dual`) `rand`
+      FROM `demo/employees.xml`
+      WHERE (`employee.@id` % 2) = 0 AND `employee.age`
+      ORDER BY `employee.length` DESC
+    )
+  ORDER BY `rand` DESC
 ");
+//ORDER BY `employee.firstname`
+
+//$sql = new \Deimos\Query("
+//  SELECT `*`
+//  FROM `dual`
+//");
 
 //$sql = new \Deimos\Query("
 //    SELECT *
