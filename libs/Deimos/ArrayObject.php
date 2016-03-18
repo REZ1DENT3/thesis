@@ -66,11 +66,18 @@ class ArrayObject extends \ArrayObject
     {
         $this->def = $this->calcDef($def);
         $this->uasort(function ($a, $b) use ($path) {
+
             $c = (new self($a))->get($path);
             $d = (new self($b))->get($path);
-            $c = $c[0];
-            $d = $d[0];
-            return $this->cmp($c, $d);
+            
+            $e = (new self($c[0]))->get('#value.value');
+            $f = (new self($d[0]))->get('#value.value');
+            
+            if ($e[0] !== null && $f[0] !== null)
+                return $this->cmp($e[0], $f[0]);
+
+            return $this->cmp($c[0], $d[0]);
+
         });
     }
 

@@ -54,9 +54,8 @@ class Query
     }
 
     /**
-     * todo
+     * @return mixed
      */
-
     private function orderBy()
     {
 
@@ -85,8 +84,9 @@ class Query
             $tmp = new ArrayObject($orderBy);
             $tmp->orderBy($path, $_orderBy[$i]['direction']);
 
+            $orderBy = $tmp->getArrayCopy();
             if (isset($saveKey)) {
-                $orderBy = array($saveKey => $tmp->getArrayCopy());
+                $orderBy = array($saveKey => $orderBy);
             }
 
         }
@@ -428,6 +428,10 @@ class Query
 
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
     private function where()
     {
 
@@ -634,6 +638,10 @@ class Query
 
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
     private function from()
     {
 
@@ -670,11 +678,16 @@ class Query
                     $this->storage['FROM'][$alias]['string'] = $this->noQuotes($options, 'table');
                     $this->xmlBuilder->loadXml($this->storage['FROM'][$alias]['string']);
                     $this->storage['FROM'][$alias]['data'] = current($this->xmlBuilder->asArray());
+                };
+                if (!$this->storage['FROM'][$alias]['data']) {
+                    $this->storage['FROM'][$alias]['data'] = array(
+                        $alias => array(
+                            'rand' => (mt_rand(0, 1) ? -1 : 1) * mt_rand(0, mt_getrandmax()),
+                            'time' => time()
+                        )
+                    );
                 }
 
-                if (!$this->storage['FROM'][$alias]['data']) {
-                    $this->storage['FROM'][$alias]['data'] = array();
-                }
 
             }
 

@@ -43,13 +43,18 @@ include "vendor/autoload.php";
 //  WHERE `employee.age`
 //");
 
+//$sql = new \Deimos\Query("
+//  SELECT avg(`*`)
+//  FROM `demo/employees.xml`
+//  WHERE (`employee.@id` % 2) = 0 AND `employee.age`
+//  ORDER BY `employee.length`
+//");
+
+
 $sql = new \Deimos\Query("
   SELECT `*`
-  FROM `demo/employees.xml`
-  WHERE (`employee.@id` % 2) = 0 AND `employee.age`
+  FROM `dual`
 ");
-
-
 
 //$sql = new \Deimos\Query("
 //    SELECT *

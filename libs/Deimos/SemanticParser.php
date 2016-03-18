@@ -67,7 +67,7 @@ class SemanticParser
                 $func = $this->semantic->getOriginal(mb_strtoupper($name));
             }
 
-            if ($func) {
+            if ($func && ($value || $type)) {
 
                 $result = $this->semantic->{$func}($value, $type);
                 if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {
