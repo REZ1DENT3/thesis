@@ -3,7 +3,6 @@
 namespace Deimos;
 
 use jlawrence\eos\Parser;
-use jlawrence\eos\Stack;
 use PHPSQLParser\utils\ExpressionType;
 
 class Query
@@ -46,9 +45,8 @@ class Query
             return $this->execute;
 
         $this->where();
-        $data = $this->storage['WHERE'];
+        $this->execute = $this->select();
 
-        $this->execute = $data;
         return $this->execute();
 
     }
@@ -57,6 +55,11 @@ class Query
      * todo
      */
 
+    /**
+     * @param $array array
+     * @param string $default
+     * @return string
+     */
     private function noQuotes($array, $default = 'base_expr')
     {
         $str = $array[$default];
@@ -71,6 +74,10 @@ class Query
         return $str;
     }
 
+    /**
+     * @param $array array
+     * @return bool
+     */
     private function isOperator($array)
     {
 
@@ -221,7 +228,7 @@ class Query
             $isOperator = false;
             $clear = false;
 
-            while ($stack->peek()) {
+            while (!$stack->isEmpty()) {
 
                 $data = $stack->pop();
 
@@ -346,6 +353,38 @@ class Query
         }
 
         return array();
+
+    }
+
+    /**
+     * @return mixed
+     */
+    private function select()
+    {
+
+        if (isset($this->storage['SELECT'])) {
+            return $this->storage['SELECT'];
+        }
+
+        $this->storage['SELECT'] = array();
+
+        $where = $this->storage['WHERE'];
+        $select = &$this->storage['SELECT'];
+
+        foreach ($this->parser->select() as $column) {
+            $obj = new ArrayObject($where);
+            $c = $this->noQuotes($column);
+            if ($c == '*') {
+                $obj = $obj->getArrayCopy();
+            }
+            else {
+                // todo
+                $obj = array();
+            }
+            $select = array_merge($select, $obj);
+        }
+
+        return $select;
 
     }
 

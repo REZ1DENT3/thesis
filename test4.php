@@ -40,7 +40,7 @@ $sql = new \Deimos\Query("
       FROM `demo/employees.xml`
       WHERE (`employee.@id` % 2) = 0
   )
-  WHERE `employee.age` < 22
+  WHERE `employee.age`
 ");
 
 //$sql = new \Deimos\Query("

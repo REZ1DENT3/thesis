@@ -5,18 +5,54 @@ namespace Deimos;
 class ArrayObject extends \ArrayObject
 {
 
+    const ASC = 1;
+    const DESC = -1;
+
+    /**
+     * @var int
+     */
+    private $def = self::ASC;
+
+    /**
+     * @param mixed $a
+     * @param mixed $b
+     * @return int
+     */
+    public function cmp($a, $b)
+    {
+
+        if (is_numeric($a) && is_numeric($b)) {
+            return $this->def * ($a - $b);
+        }
+        else if (is_object($a) && is_object($b)) {
+            $a = spl_object_hash($a);
+            $b = spl_object_hash($b);
+        }
+        else if (is_array($a) && is_array($b)) {
+            $a = count($a);
+            $b = count($b);
+        }
+
+        return $this->def * strcmp($a, $b);
+
+    }
+
+    /**
+     * @param int $def
+     */
+    public function sort($def = self::ASC)
+    {
+        $this->def = $def;
+        $this->uasort(array($this, 'cmp'));
+    }
+
     /**
      * @param array $array
      * @return bool
      */
     public final function checkKeysIsNumber(array $array)
     {
-        foreach (array_keys($array) as $value) {
-            if (!is_numeric($value)) {
-                return false;
-            }
-        }
-        return true;
+        return ctype_digit(implode('', array_keys($array)));
     }
 
     /**
