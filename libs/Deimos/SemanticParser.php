@@ -49,6 +49,11 @@ class SemanticParser
             }
 
             $value = null;
+
+            if (is_string($element)) {
+                $value = $element;
+            }
+
             if (isset($element['nodevalue'])) {
                 $value = $element['nodevalue'];
             }
@@ -68,6 +73,10 @@ class SemanticParser
             }
 
             if ($func && ($value || $type)) {
+
+                if (is_string($element)) {
+                    $element = array();
+                }
 
                 $result = $this->semantic->{$func}($value, $type);
                 if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {

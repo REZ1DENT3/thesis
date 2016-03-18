@@ -22,25 +22,25 @@ include_once "vendor/autoload.php";
 //  ORDER BY `employee.@id`
 //");
 
-//$query = new \Deimos\Query("
-//  SELECT *
-//  FROM `demo/employees2.xml`
-//  WHERE `employee.@id` != 0
-//  ORDER BY `employee.@id` DESC
-//");
-
-//$query = new \Deimos\Query("
-//  SELECT *
-//  FROM `demo/employees2.xml`
-//  ORDER BY `employee.@id` DESC
-//");
-
 $query = new \Deimos\Query("
   SELECT *
   FROM `demo/employees2.xml`
-  WHERE `employee.hiredate` BETWEEN `15-10-2000` AND `15-10-2015`
+  WHERE `employee.@id` != 0
   ORDER BY `employee.@id` DESC
 ");
+
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `demo/employees2.xml`
+//  ORDER BY `employee.@id` DESC
+//");
+
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `demo/employees2.xml`
+//  WHERE `employee.hiredate` BETWEEN `15-10-2000` AND `15-10-2015`
+//  ORDER BY `employee.@id` DESC
+//");
 
 //$query = new \Deimos\Query("
 //  SELECT `employee.hiredate`

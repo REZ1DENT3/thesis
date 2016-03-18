@@ -197,11 +197,18 @@ class Query
                 return array($option['expr_type']);
             }
 
+            if ($option['expr_type'] === ExpressionType::SUBQUERY) {
+                return (new self(trim($option['base_expr'], '()')))
+                    ->execute();
+            }
+
             if ($option['expr_type'] !== ExpressionType::BRACKET_EXPRESSION) {
                 $stack->push($option);
             }
             else {
+
                 $result = null;
+
                 try {
                     $result = Parser::solve($option['base_expr']);
                 }
@@ -287,7 +294,18 @@ class Query
 
                     case ExpressionType::COLREF:
                         if (!$this->isOperator($data)) {
-                            $parameters[] = $this->getInArray($column, $data);
+
+                            $getInArray = $this->getInArray($column, $data);
+                            $semantic = new SemanticParser($column);
+
+                            $semArray = $semantic->get($this->noQuotes($data));
+
+                            if (count($semArray)) {
+                                $getInArray = $semArray;
+                            }
+
+                            $parameters[] = $getInArray;
+
                         }
                         else {
                             $parameters[] = $this->noQuotes($data);
@@ -575,7 +593,7 @@ class Query
 
                                 case 'IS':
                                     $operators[0] = '=';
-                                    if (end($opts) == 'NOT') {
+                                    if ($this->noQuotes(end($opts)) == 'NOT') {
                                         $operators = array('!=');
                                         $opts[key($opts)] = $where[++$ind];
                                     }
@@ -606,7 +624,7 @@ class Query
                                 }
 
                             }
-
+                            
                             foreach ($operators as $operator) {
 
                                 if (!is_array($options)) {
