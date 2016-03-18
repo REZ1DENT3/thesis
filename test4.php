@@ -47,7 +47,6 @@ $sql = new \Deimos\Query("
   SELECT `*`
   FROM `demo/employees.xml`
   WHERE (`employee.@id` % 2) = 0 AND `employee.age`
-  ORDER BY `employee.@id` DESC, `employee.age` ASC
 ");
 
 

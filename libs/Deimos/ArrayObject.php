@@ -5,13 +5,13 @@ namespace Deimos;
 class ArrayObject extends \ArrayObject
 {
 
-    const ASC = 1;
-    const DESC = -1;
+    const ASC = 'ASC';
+    const DESC = 'DESC';
 
     /**
      * @var int
      */
-    private $def = self::ASC;
+    private $def = 1; // self::ASC
 
     /**
      * @param mixed $a
@@ -20,6 +20,10 @@ class ArrayObject extends \ArrayObject
      */
     public function cmp($a, $b)
     {
+
+        if ($a === null && $b === null) return 0;
+        if ($a === null) return 1;
+        if ($b === null) return -1;
 
         if (is_numeric($a) && is_numeric($b)) {
             return $this->def * ($a - $b);
@@ -38,12 +42,36 @@ class ArrayObject extends \ArrayObject
     }
 
     /**
-     * @param int $def
+     * @param string $def
+     * @return int
+     */
+    private function calcDef($def)
+    {
+        return 2 - (3 >> ($def === self::ASC));
+    }
+
+    /**
+     * @param string $def
      */
     public function sort($def = self::ASC)
     {
-        $this->def = $def;
+        $this->def = $this->calcDef($def);
         $this->uasort(array($this, 'cmp'));
+    }
+
+    /**
+     * @param string $def
+     */
+    public function orderBy($path, $def = self::ASC)
+    {
+        $this->def = $this->calcDef($def);
+        $this->uasort(function ($a, $b) use ($path) {
+            $c = (new self($a))->get($path);
+            $d = (new self($b))->get($path);
+            $c = $c[0];
+            $d = $d[0];
+            return $this->cmp($c, $d);
+        });
     }
 
     /**

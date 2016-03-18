@@ -46,6 +46,7 @@ class Query
 
         $this->where();
         $this->orderBy();
+
         $this->execute = $this->select();
 
         return $this->execute();
@@ -65,11 +66,30 @@ class Query
 
         $this->storage['ORDER'] = array();
         $orderBy = &$this->storage['ORDER'];
+        $orderBy = $this->storage['WHERE'];
 
-        $where = $this->storage['WHERE'];
+        $_orderBy = $this->parser->orderBy();
 
-        var_dump($this->parser->orderBy());
-        die;
+        for ($i = count($_orderBy) - 1; $i >= 0; --$i) {
+
+            $path = $this->noQuotes($_orderBy[$i]);
+
+            if (count($orderBy) === 1) {
+                $saveKey = key($orderBy);
+                $orderBy = current($orderBy);
+                $path = explode('.', $path);
+                unset($path[0]);
+                $path = implode('.', $path);
+            }
+
+            $tmp = new ArrayObject($orderBy);
+            $tmp->orderBy($path, $_orderBy[$i]['direction']);
+
+            if (isset($saveKey)) {
+                $orderBy = array($saveKey => $tmp->getArrayCopy());
+            }
+
+        }
 
         return $orderBy;
 
@@ -388,11 +408,11 @@ class Query
 
         $this->storage['SELECT'] = array();
 
-        $where = $this->storage['WHERE'];
+        $order = $this->storage['ORDER'];
         $select = &$this->storage['SELECT'];
 
         foreach ($this->parser->select() as $column) {
-            $obj = new ArrayObject($where);
+            $obj = new ArrayObject($order);
             $c = $this->noQuotes($column);
             if ($c == '*') {
                 $obj = $obj->getArrayCopy();
