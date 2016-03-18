@@ -28,11 +28,14 @@ class Query
      */
     protected $execute = null;
 
+    private $cache = array();
+
     /**
      * Query constructor.
-     * @param $sql
+     * @param string $sql
+     * @param null|Query $query
      */
-    public function __construct($sql)
+    public function __construct($sql, $query = null)
     {
         $this->parser = new QueryParser($sql, true);
         $this->xmlBuilder = new XMLBuilder();
@@ -176,6 +179,16 @@ class Query
 
     }
 
+    private function cache($sql)
+    {
+        if (isset($this->cache[$sql])) {
+            return $this->cache[$sql];
+        }
+        $this->cache[$sql] = (new self(mb_substr($sql, 1, -1)))
+            ->execute();
+        return $this->cache[$sql];
+    }
+
     /**
      * @param array $options
      * @param array $column
@@ -198,8 +211,7 @@ class Query
             }
 
             if ($option['expr_type'] === ExpressionType::SUBQUERY) {
-                return (new self(trim($option['base_expr'], '()')))
-                    ->execute();
+                return $this->cache($option['base_expr']);
             }
 
             if ($option['expr_type'] !== ExpressionType::BRACKET_EXPRESSION) {
@@ -456,8 +468,7 @@ class Query
                 foreach ($temp as $key => $o) {
                     foreach ($column['sub_tree'] as $col) {
                         if ($col['expr_type'] == ExpressionType::SUBQUERY) {
-                            $obj[$key] = (new self(trim($col['base_expr'], '()')))
-                                ->execute();
+                            $obj[$key] = $this->cache($col['base_expr']);
                         }
                     }
                 }
@@ -624,7 +635,7 @@ class Query
                                 }
 
                             }
-                            
+
                             foreach ($operators as $operator) {
 
                                 if (!is_array($options)) {
@@ -767,8 +778,7 @@ class Query
                 }
                 else if ($options['expr_type'] == ExpressionType::SUBQUERY) {
                     $this->storage['FROM'][$alias]['string'] = $options['base_expr'];
-                    $this->storage['FROM'][$alias]['data'] = (new self(trim($options['base_expr'], '()')))
-                        ->execute();
+                    $this->storage['FROM'][$alias]['data'] = $this->cache($options['base_expr']);
                 }
                 else {
                     $this->storage['FROM'][$alias]['string'] = $this->noQuotes($options, 'table');

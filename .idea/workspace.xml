@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b2d15f-a590-4a89-8d53-c5d16c4595dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/Query.php" afterPath="$PROJECT_DIR$/libs/Deimos/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" afterPath="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
     </list>
     <ignored path="xmlparser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,69 +29,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Query.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="626" column="28" selection-start-line="626" selection-start-column="28" selection-end-line="626" selection-end-column="28" />
+            <state relative-caret-position="188">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="e#26#51#0#PHP" expanded="true" />
-                <element signature="e#2106#2499#0#PHP" expanded="false" />
-                <element signature="e#2568#3117#0#PHP" expanded="false" />
+                <element signature="e#2191#2584#0#PHP" expanded="false" />
+                <element signature="e#2653#3202#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employees2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/employees2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SemanticUltra.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticUltra.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SemanticParser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="80" column="53" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayObject.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Deimos/ArrayObject.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="3" selection-start-line="24" selection-start-column="20" selection-end-line="29" selection-end-column="3" />
+            <state relative-caret-position="204">
+              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
               <folding>
-                <marker date="1458340673332" expanded="true" signature="845:985" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1458340673332" expanded="true" signature="1933:2074" placeholder="SELECT * FRO... demo/employees2.xml" />
-                <marker date="1458340673332" expanded="true" signature="2009:2068" placeholder="SELECT min(`... demo/employees2.xml" />
+                <marker date="1458341954110" expanded="true" signature="77:381" placeholder="SELECT `*` F... demo/tables.xml" />
+                <marker date="1458341954110" expanded="true" signature="201:373" placeholder="SELECT `tabl... demo/tables.xml" />
+                <marker date="1458341954110" expanded="true" signature="940:1042" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1458341954110" expanded="true" signature="1200:1340" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1458341954110" expanded="true" signature="2288:2429" placeholder="SELECT * FRO... demo/employees2.xml" />
+                <marker date="1458341954110" expanded="true" signature="2364:2423" placeholder="SELECT min(`... demo/employees2.xml" />
               </folding>
             </state>
           </provider>
@@ -156,8 +117,8 @@
         <option value="$PROJECT_DIR$/demo/employees2.xml" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticUltra.php" />
         <option value="$PROJECT_DIR$/libs/Deimos/SemanticParser.php" />
-        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/libs/Deimos/Query.php" />
       </list>
     </option>
   </component>
@@ -357,12 +318,12 @@
       <workItem from="1458299363197" duration="228000" />
       <workItem from="1458299621346" duration="496000" />
       <workItem from="1458319230023" duration="3000" />
-      <workItem from="1458319252077" duration="18237000" />
+      <workItem from="1458319252077" duration="19844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18964000" />
+    <option name="totallyTimeSpent" value="20571000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -472,13 +433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="566" column="15" selection-start-line="566" selection-start-column="9" selection-end-line="566" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -704,14 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/ArrayObject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test4.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -740,22 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/tables.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="588" column="9" selection-start-line="588" selection-start-column="9" selection-end-line="588" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/simple.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -772,18 +702,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
+    <entry file="file://$PROJECT_DIR$/examples.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="80" column="53" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="53" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/employees2.xml">
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/ArrayObject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/SemanticParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <caret line="80" column="53" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -796,26 +734,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+    <entry file="file://$PROJECT_DIR$/demo/employees2.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="626" column="28" selection-start-line="626" selection-start-column="28" selection-end-line="626" selection-end-column="28" />
-          <folding>
-            <element signature="e#26#51#0#PHP" expanded="true" />
-            <element signature="e#2106#2499#0#PHP" expanded="false" />
-            <element signature="e#2568#3117#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="3" selection-start-line="24" selection-start-column="20" selection-end-line="29" selection-end-column="3" />
+        <state relative-caret-position="204">
+          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
           <folding>
-            <marker date="1458340673332" expanded="true" signature="845:985" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1458340673332" expanded="true" signature="1933:2074" placeholder="SELECT * FRO... demo/employees2.xml" />
-            <marker date="1458340673332" expanded="true" signature="2009:2068" placeholder="SELECT min(`... demo/employees2.xml" />
+            <marker date="1458341954110" expanded="true" signature="77:381" placeholder="SELECT `*` F... demo/tables.xml" />
+            <marker date="1458341954110" expanded="true" signature="201:373" placeholder="SELECT `tabl... demo/tables.xml" />
+            <marker date="1458341954110" expanded="true" signature="940:1042" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1458341954110" expanded="true" signature="1200:1340" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1458341954110" expanded="true" signature="2288:2429" placeholder="SELECT * FRO... demo/employees2.xml" />
+            <marker date="1458341954110" expanded="true" signature="2364:2423" placeholder="SELECT min(`... demo/employees2.xml" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/tables.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Deimos/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#51#0#PHP" expanded="true" />
+            <element signature="e#2191#2584#0#PHP" expanded="false" />
+            <element signature="e#2653#3202#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

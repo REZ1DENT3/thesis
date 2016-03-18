@@ -2,6 +2,18 @@
 
 include_once "vendor/autoload.php";
 
+$query = new \Deimos\Query("
+    SELECT `*`
+    FROM `demo/tables.xml`
+    WHERE `table.@name` = `teachers`
+      AND `table.column.2.nodevalue` = (
+        SELECT `table.column.0.nodevalue`
+        FROM `demo/tables.xml`
+        WHERE `table.@name` = `departments`
+          AND `table.column.1.nodevalue` LIKE `%моделирования%`
+      )
+");
+
 //$query = new \Deimos\Query("
 //  SELECT `employee.@id`
 //  FROM `demo/employees.xml`
@@ -22,12 +34,12 @@ include_once "vendor/autoload.php";
 //  ORDER BY `employee.@id`
 //");
 
-$query = new \Deimos\Query("
-  SELECT *
-  FROM `demo/employees2.xml`
-  WHERE `employee.@id` != 0
-  ORDER BY `employee.@id` DESC
-");
+//$query = new \Deimos\Query("
+//  SELECT *
+//  FROM `demo/employees2.xml`
+//  WHERE `employee.@id` != 0
+//  ORDER BY `employee.@id` DESC
+//");
 
 //$query = new \Deimos\Query("
 //  SELECT *
