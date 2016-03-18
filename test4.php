@@ -33,15 +33,24 @@ include "vendor/autoload.php";
 //  WHERE (`employee.@id` % 2) = 0
 //");
 
+//$sql = new \Deimos\Query("
+//  SELECT `*`
+//  FROM (
+//      SELECT `*`
+//      FROM `demo/employees.xml`
+//      WHERE (`employee.@id` % 2) = 0
+//  )
+//  WHERE `employee.age`
+//");
+
 $sql = new \Deimos\Query("
   SELECT `*`
-  FROM (
-      SELECT `*`
-      FROM `demo/employees.xml`
-      WHERE (`employee.@id` % 2) = 0
-  )
-  WHERE `employee.age`
+  FROM `demo/employees.xml`
+  WHERE (`employee.@id` % 2) = 0 AND `employee.age`
+  ORDER BY `employee.@id` DESC, `employee.age` ASC
 ");
+
+
 
 //$sql = new \Deimos\Query("
 //    SELECT *

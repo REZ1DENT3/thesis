@@ -45,6 +45,7 @@ class Query
             return $this->execute;
 
         $this->where();
+        $this->orderBy();
         $this->execute = $this->select();
 
         return $this->execute();
@@ -54,6 +55,25 @@ class Query
     /**
      * todo
      */
+
+    private function orderBy()
+    {
+
+        if (isset($this->storage['ORDER'])) {
+            return $this->storage['ORDER'];
+        }
+
+        $this->storage['ORDER'] = array();
+        $orderBy = &$this->storage['ORDER'];
+
+        $where = $this->storage['WHERE'];
+
+        var_dump($this->parser->orderBy());
+        die;
+
+        return $orderBy;
+
+    }
 
     /**
      * @param $array array

@@ -1,8 +1,5 @@
 <?php
 
-var_dump(array_is_numeric([1,2,3]));
-die;
-
 //namespace D;
 //
 //class Queue extends \SplQueue
