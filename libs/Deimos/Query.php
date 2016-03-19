@@ -28,6 +28,9 @@ class Query
      */
     protected $execute = null;
 
+    /**
+     * @var array
+     */
     private $cache = array();
 
     /**
@@ -41,6 +44,9 @@ class Query
         $this->xmlBuilder = new XMLBuilder();
     }
 
+    /**
+     * @return array
+     */
     public function execute()
     {
 
@@ -149,6 +155,12 @@ class Query
 
     }
 
+    /**
+     * @param $column
+     * @param $data
+     * @param bool $toCurrent
+     * @return array
+     */
     private function getInArray($column, $data, $toCurrent = true)
     {
 
@@ -179,14 +191,36 @@ class Query
 
     }
 
+    /**
+     * @param $sql
+     * @return mixed
+     */
     private function cache($sql)
     {
+
         if (isset($this->cache[$sql])) {
             return $this->cache[$sql];
         }
-        $this->cache[$sql] = (new self(mb_substr($sql, 1, -1)))
-            ->execute();
+
+        $sql2 = mb_substr($sql, 1, -1);
+
+        if (preg_match('~^SELECT~i', $sql2)) {
+            $data = (new self($sql2))
+                ->execute();
+        }
+        else {
+            $data = (new self($sql))
+                ->execute();
+        }
+        
+        if (preg_match('~`dual`~i', $sql)) {
+            return $data;
+        }
+
+        $this->cache[$sql] = $data;
+
         return $this->cache[$sql];
+
     }
 
     /**
