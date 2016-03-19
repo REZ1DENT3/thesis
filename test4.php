@@ -56,25 +56,13 @@ include "vendor/autoload.php";
 //  ORDER BY `employee.length` DESC
 //");
 
-//$sql = new \Deimos\Query("
-//SELECT
-//          `employee.@id` `id`,
-//          `employee.firstname`,
-//          `employee.lastname`,
-//          `employee.age`,
-//          `employee.length`,
-//          `employee.length.#value.type` `lengthType`,
-//          (SELECT `tmp.rand` FROM `dual`) `rand`
-//      FROM `demo/employees.xml`
-//      WHERE (`employee.@id` % 2) = 0 AND `employee.age`");
-
 $sql = new \Deimos\Query("
   SELECT `*`
-  FROM
-    (SELECT
-          `employee.@id` `id`,
-          `employee.firstname`,
-          `employee.lastname`,
+  FROM 
+    (SELECT  
+          `employee.@id` `id`, 
+          `employee.firstname`, 
+          `employee.lastname`, 
           `employee.age`,
           `employee.length`,
           `employee.length.#value.type` `lengthType`,
@@ -83,6 +71,7 @@ $sql = new \Deimos\Query("
       WHERE (`employee.@id` % 2) = 0 AND `employee.age`
       ORDER BY `employee.length` DESC
     )
+  ORDER BY `rand` DESC
 ");
 //ORDER BY `employee.firstname`
 
