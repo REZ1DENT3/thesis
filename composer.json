@@ -10,6 +10,7 @@
     "thapp/xmlbuilder": "^0.1.4",
     "greenlion/php-sql-parser": "^4.0",
     "aboyadzhiev/php-math-parser": "dev-master",
-    "jlawrence/eos": "^3.2"
+    "jlawrence/eos": "^3.2",
+    "symfony/console": "^3.0"
   }
 }
