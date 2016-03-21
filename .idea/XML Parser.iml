@@ -10,10 +10,10 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/query.phar/" />
+          <root url="phar://$MODULE_DIR$/build/query.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/query.phar/" />
+          <root url="phar://$MODULE_DIR$/build/query.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
