@@ -21,6 +21,7 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
     }
     else if (($pos = mb_strpos($line, ';')) !== false) {
 
+        $mcTime = microtime();
         $input .= mb_substr($line, 0, $pos);
 
         if (!isset($cache[$input])) {
@@ -35,6 +36,7 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
 
         if (isset($cache[$input])) {
             var_dump($cache[$input]);
+            printf("\n$ runtime: %f ms\n", microtime() - $mcTime);
         }
 
         $input = mb_substr($line, $pos + 2);
@@ -49,3 +51,22 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
     }
 
 });
+
+$time = time();
+$date = date('d.m.Y', $time);
+
+$dir = dirname(__DIR__);
+$dir = preg_replace('~phar://~', '', $dir);
+$dir = dirname($dir);
+
+if (!file_exists($dir . '/logs/' . $date)) {
+    mkdir($dir . '/logs/' . $date, 0777, true);
+}
+
+try {
+    $filename = $dir . '/logs/' . $date . '/' . date('H_i_s', $time) . '.log';
+    file_put_contents($filename, json_encode($cache, JSON_PRETTY_PRINT));
+    printf("# session save to %s\n", $filename);
+}
+catch (\Exception $e) {
+}
