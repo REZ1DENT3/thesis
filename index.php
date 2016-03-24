@@ -3,22 +3,29 @@
 include_once "vendor/autoload.php";
 
 $query = new \Deimos\Query("
-  SELECT `*` 
-  FROM `demo/employees.xml`
+    SELECT `*`
+    FROM `demo/tables.xml`
+    WHERE `table.@name` = `teachers`
+      AND `table.column.2.nodevalue` = (
+        SELECT `table.column.0.nodevalue`
+        FROM `demo/tables.xml`
+        WHERE `table.@name` = `departments`
+          AND `table.column.1.nodevalue` LIKE `%моделирования%`
+      )
 ");
 
-
 //$query = new \Deimos\Query("
-//    SELECT `*`
-//    FROM `demo/tables.xml`
-//    WHERE `table.@name` = `teachers`
-//      AND `table.column.2.nodevalue` = (
-//        SELECT `table.column.0.nodevalue`
+//  SELECT `table.column.0.nodevalue`
 //        FROM `demo/tables.xml`
 //        WHERE `table.@name` = `departments`
-//          AND `table.column.1.nodevalue` LIKE `%моделирования%`
-//      )
-//");
+//          AND `table.column.1.nodevalue` LIKE `%моделирования%`");
+//
+//$query = new \Deimos\Query("
+//
+//    SELECT `table.column.2.nodevalue`
+//    FROM `demo/tables.xml`
+//    WHERE `table.@name` = `teachers` AND `table.column.2.nodevalue` = 2");
+//
 
 //$query = new \Deimos\Query("
 //  SELECT `employee.@id`

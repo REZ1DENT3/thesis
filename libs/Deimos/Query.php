@@ -40,8 +40,14 @@ class Query
      */
     public function __construct($sql, $query = null)
     {
+        $sql = trim($sql);
+        while (mb_substr($sql, 0, 1) == '(' && mb_substr($sql, -1) == ')') {
+            $sql = trim(mb_substr($sql, 1, -1));
+        }
+
         $this->parser = new QueryParser($sql, true);
         $this->xmlBuilder = new XMLBuilder();
+//        var_dump($sql);
     }
 
     /**
