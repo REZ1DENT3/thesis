@@ -64,7 +64,7 @@ if (!file_exists($dir . '/logs/' . $date)) {
 }
 
 try {
-    $filename = $dir . '/logs/' . $date . '/' . date('H_i_s', $time) . '.log';
+    $filename = $dir . '/logs/' . $date . '/' . date('H_i_s', $time) . '.json';
     file_put_contents($filename, json_encode($cache, JSON_PRETTY_PRINT));
     printf("# session save to %s\n", $filename);
 }

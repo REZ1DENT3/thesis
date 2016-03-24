@@ -50,8 +50,9 @@ class Query
     public function execute()
     {
 
-        if ($this->execute !== null)
+        if ($this->execute !== null) {
             return $this->execute;
+        }
 
         $this->where();
         $this->orderBy();
@@ -212,7 +213,7 @@ class Query
             $data = (new self($sql))
                 ->execute();
         }
-        
+
         if (preg_match('~`dual`~i', $sql)) {
             return $data;
         }
@@ -771,7 +772,7 @@ class Query
 
         }
         else {
-            // fixme
+            $from['data'] = $semantic->getStorage();
             $this->storage['WHERE'] = &$from['data'];
         }
 
@@ -818,7 +819,7 @@ class Query
                     $this->storage['FROM'][$alias]['string'] = $this->noQuotes($options, 'table');
                     $this->xmlBuilder->loadXml($this->storage['FROM'][$alias]['string']);
                     $this->storage['FROM'][$alias]['data'] = current($this->xmlBuilder->asArray());
-                };
+                }
 
                 if (!$this->storage['FROM'][$alias]['data']) {
                     $this->storage['FROM'][$alias]['data'] = array(
@@ -828,7 +829,6 @@ class Query
                         )
                     );
                 }
-
 
             }
 
