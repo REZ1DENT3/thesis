@@ -4,16 +4,15 @@ namespace Deimos;
 
 class SemanticParser
 {
+    /**
+     * @var array
+     */
+    private $storage = array();
 
     /**
-     * @var Parser
+     * @var array
      */
-    private $parser;
-
-    /**
-     * @var \stdClass
-     */
-    private $data;
+    private $arrayObject = array();
 
     /**
      * @var SemanticUltra
@@ -21,150 +20,116 @@ class SemanticParser
     private $semantic;
 
     /**
-     * @return SemanticUltra
-     */
-    public function getSemantic()
-    {
-        return $this->semantic;
-    }
-
-    /**
      * SemanticParser constructor.
-     * @param Parser $parser
+     * @param $array array
      */
-    public function __construct(Parser $parser)
+    public function __construct($array)
     {
-        $this->parser = $parser;
         $this->semantic = new SemanticUltra();
+        $this->storage = $array;
+        $this->init($this->storage);
+        $this->arrayObject = new ArrayObject($this->storage);
     }
 
     /**
-     * @param null $items
-     * @param null $data
-     * @return \stdClass
+     * @param $storage array
      */
-    public function execute($items = null, &$data = null)
+    private function init(&$storage)
     {
 
-        if ($items === null) {
-            $items = $this->parser;
+        if (!is_array($storage) || isset($storage['nodevalue'])) {
+            return;
         }
 
-        if ($data === null) {
-            $data = &$this->data;
-        }
+        foreach ($storage as $key => &$element) {
 
-        /**
-         * @var $item Parser
-         */
-        foreach ($items as $item) {
-
-            $tagName = $item->getName();
-
-            if ($this->semantic->isSemantic($tagName)) {
-                $tagName = $this->semantic->getOriginal($tagName);
+            $type = null;
+            if (isset($element['@attributes']['type'])) {
+                $type = $element['@attributes']['type'];
             }
 
-            if (empty($data)) {
-                $data = new \stdClass();
+            $value = null;
+
+            if (is_string($element)) {
+                $value = $element;
             }
 
-            if (!isset($data->{$tagName})) {
-                $data->{$tagName} = array();
+            if (isset($element['nodevalue'])) {
+                $value = $element['nodevalue'];
             }
 
-            $data->{$tagName}[] = new \stdClass();
+            if (isset($element['@attributes']['value'])) {
+                $value = $element['@attributes']['value'];
+            }
 
-            end($data->{$tagName});
-            $key = key($data->{$tagName});
+            $name = $key;
+            if (isset($element['@attributes']['name'])) {
+                $name = $element['@attributes']['name'];
+            }
 
-            /**
-             * @var $_item Parser
-             */
-            $_item = &$data->{$tagName}[$key];
-            $_item->{'@attributes'} = $item->attr();
+            $func = null;
+            if ($this->semantic->isSemantic($name)) {
+                $func = $this->semantic->getOriginal(mb_strtoupper($name));
+            }
 
-            $this->execute($item, $_item);
+            if ($func && ($value || $type)) {
 
-            /**
-             * @var $element Parser
-             */
-            foreach ($item as $tgName => $element) {
-
-                $attr = $element->attr();
-
-                if ($this->semantic->isSemantic($tgName)) {
-                    $tgName = $this->semantic->getOriginal($tgName);
+                if (is_string($element)) {
+                    $element = array();
                 }
 
-                if (!isset($_item->{$tgName})) {
-                    $_item->{$tgName} = new \stdClass();
-                }
-                else if (is_array($_item->{$tgName})) {
-                    $_item->{$tgName} = new \stdClass($_item->{$tgName});
-                }
-
-                if (!empty($attr)) {
-                    $_item->{$tgName}->{'@attributes'} = $attr;
-                }
-
-                if (!$this->semantic->isSemantic($tgName)) {
-                    $_item->{$tgName}->{'#value'} = (object)$element;
-                    if (count((array)$_item->{$tgName}->{'#value'}) == 1) {
-                        if (is_array($_item->{$tgName}->{'#value'}->{0})) {
-                            $_item->{$tgName} = (array)$_item->{$tgName}->{'#value'}->{0};
-                            $_item->{$tgName} = QueryParser::convertToObject($_item->{$tgName});
-                        }
-                        else {
-                            $_item->{$tgName} = (array)$_item->{$tgName}->{'#value'};
-                            if (count($_item->{$tgName}) == 1) {
-                                $_item->{$tgName} = $_item->{$tgName}[0];
-                            }
-                        }
-                    }
-                    continue;
-                }
-
-                $type = $element->attr('type');
-                if ($type) {
-                    $value = (string)$element;
-                    if (empty($value)) {
-                        $value = $element->attr('value');
-                    }
-                    if ($value) {
-                        $result = $this->semantic->{mb_strtoupper($tgName)}($value, $type);
-                        if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {
-                            $_item->{$tgName}->{'#value'} = array(
-                                'value' => $result->toUnit($this->semantic->{$tgName}),
-                                'type' => $this->semantic->{$tgName}
-                            );
-                        }
-                    }
+                $result = $this->semantic->{$func}($value, $type);
+                if ($result instanceof \PhpUnitsOfMeasure\AbstractPhysicalQuantity) {
+                    $element['#value'] = array(
+                        'value' => $result->toUnit($this->semantic->{$func}),
+                        'type' => $this->semantic->{$func}
+                    );
                 }
                 else {
-                    $value = (string)$element;
-                    if (empty($value)) {
-                        $value = $element->attr('value');
-                    }
-                    $_item->{$tgName}->{'#value'} = array(
-                        'value' => $this->semantic->{$tgName}($value),
-                        'type' => $this->semantic->{$tgName}
+                    $element['#value'] = array(
+                        'value' => $result,
+                        'type' => $this->semantic->{$func}
                     );
                 }
 
+                if (mb_strtoupper($func) !== mb_strtoupper($key)) {
+                    $storage[$func] = $element;
+                    unset($storage[$key]);
+                }
             }
-        }
 
-        return $this->data;
+            $this->init($element);
+
+        }
 
     }
 
-    public function getSemanticData()
+    /**
+     * @return array
+     */
+    public function getStorage()
     {
-        if ($this->data) {
-            return $this->data;
+        return $this->storage;
+    }
+
+    /**
+     * @param $path string
+     * @return array
+     */
+    public final function get($path)
+    {
+        $rows = $this->arrayObject->get($path);
+        foreach ($rows as &$row) {
+            if (is_array($row)) {
+                if (isset($row['#value'])) {
+                    $row = $row['#value']['value'];
+                }
+                if (isset($row['nodevalue'])) {
+                    $row = $row['nodevalue'];
+                }
+            }
         }
-        return $this->execute();
+        return $rows;
     }
 
 }

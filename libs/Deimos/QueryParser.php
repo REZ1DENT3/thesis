@@ -18,7 +18,6 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     {
         if ($sql) {
             $this->parse($sql, $calcPositions);
-            $this->parsed = $this->convertToObject($this->parsed);
         }
     }
 
@@ -35,7 +34,7 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
             return $this->_row[$key];
         }
 
-        if (isset($this->parsed->{mb_strtoupper($key)})) {
+        if (isset($this->parsed[mb_strtoupper($key)])) {
             $this->_row[$key] = call_user_func_array(array(
                 $this, '_' . $name
             ), array());
@@ -47,30 +46,11 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     }
 
     /**
-     * @param array|\stdClass $array
-     * @return \stdClass
-     */
-    public static function convertToObject($array)
-    {
-        $object = new \stdClass();
-        foreach ($array as $key => $value) {
-            if ($value instanceof \Deimos\Parser) {
-                $value = (array)$value;
-            }
-            if (is_array($value)) {
-                $value = self::convertToObject($value);
-            }
-            $object->$key = $value;
-        }
-        return $object;
-    }
-
-    /**
      * @return mixed
      */
-    final protected function _select()
+    private function _select()
     {
-        return $this->parsed->SELECT;
+        return $this->parsed['SELECT'];
     }
 
     /**
@@ -84,9 +64,9 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    final protected function _from()
+    private function _from()
     {
-        return $this->parsed->FROM;
+        return $this->parsed['FROM'];
     }
 
     /**
@@ -100,9 +80,9 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    final protected function _where()
+    private function _where()
     {
-        return $this->parsed->WHERE;
+        return $this->parsed['WHERE'];
     }
 
     /**
@@ -116,15 +96,31 @@ class QueryParser extends \PHPSQLParser\PHPSQLParser
     /**
      * @return mixed
      */
-    final protected function _orderBy()
+    private function _orderBy()
     {
-        return $this->parsed->ORDER;
+        return $this->parsed['ORDER'];
     }
 
     /**
      * @return mixed
      */
     public function orderBy()
+    {
+        return $this->cache(__FUNCTION__);
+    }
+
+    /**
+     * @return mixed
+     */
+    private function _groupBy()
+    {
+        return $this->parsed['ORDER'];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function groupBy()
     {
         return $this->cache(__FUNCTION__);
     }

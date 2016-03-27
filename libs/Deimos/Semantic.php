@@ -27,7 +27,9 @@ class Semantic
     {
         return isset($this->_row[$name]) ||
         (isset($this->_rowAliases[$name]) &&
-            $this->isSemantic($this->_rowAliases[$name]));
+            $this->isSemantic($this->_rowAliases[$name])) ||
+        (isset($this->_rowAliases[mb_strtoupper($name)]) &&
+            $this->isSemantic($this->_rowAliases[mb_strtoupper($name)]));
     }
 
     /**
@@ -94,8 +96,15 @@ class Semantic
      */
     public function addAlias($name, $aliasName)
     {
+        $aliasName = mb_strtoupper($aliasName);
         if (in_array($name, array_keys($this->_rowAliases)) && $this->isSemantic($this->_rowAliases[$name])) {
             $this->_rowAliases[$aliasName] = &$this->_rowAliases[$name];
+        }
+        else if (in_array(mb_strtoupper($name), array_keys($this->_rowAliases))
+            && $this->isSemantic($this->_rowAliases[mb_strtoupper($name)])
+        ) {
+
+            $this->_rowAliases[$aliasName] = &$this->_rowAliases[mb_strtoupper($name)];
         }
         else if ($this->isSemantic($name)) {
             $this->_rowAliases[$aliasName] = $name;
