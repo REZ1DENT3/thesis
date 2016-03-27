@@ -1,5 +1,9 @@
 <?php
 
+mb_internal_encoding('utf-8');
+
+define('COMMANDLINE_TYPE', 1);
+
 include_once 'vendor/autoload.php';
 
 $console = new \Deimos\Console();
@@ -8,6 +12,8 @@ $input = '';
 $cache = array();
 
 $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
+
+    ob_start(); // utf-8
 
     $line = $console->getLine();
 
@@ -18,6 +24,9 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
         foreach (array_keys($cache) as $sql) {
             echo '$ ', $sql, "\n";
         }
+    }
+    else if (preg_match('~^(clean cache)~ui', $line)) {
+        $cache = array();
     }
     else if (($pos = mb_strpos($line, ';')) !== false) {
 
@@ -36,7 +45,7 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
 
         if (isset($cache[$input])) {
             var_dump($cache[$input]);
-            printf("\n$ runtime: %f ms\n", microtime() - $mcTime);
+            printf("\n$ runtime: %f ms\n", abs(microtime() - $mcTime));
         }
 
         $input = mb_substr($line, $pos + 2);
@@ -49,6 +58,10 @@ $console->run(function (\Deimos\Console $console) use (&$input, &$cache) {
     else {
         $input .= $line . ' ';
     }
+
+    $data = ob_get_clean(); // to Console
+
+    printf("%s", iconv('utf-8', 'cp866', $data));
 
 });
 

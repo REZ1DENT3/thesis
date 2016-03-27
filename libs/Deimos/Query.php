@@ -47,7 +47,6 @@ class Query
 
         $this->parser = new QueryParser($sql, true);
         $this->xmlBuilder = new XMLBuilder();
-//        var_dump($sql);
     }
 
     /**
@@ -211,7 +210,12 @@ class Query
 
         $sql2 = mb_substr($sql, 1, -1);
 
-        if (preg_match('~^SELECT~i', $sql2)) {
+        $utf8 = 'u';
+        if (defined('COMMANDLINE_TYPE')) {
+            $utf8 = '';
+        }
+
+        if (preg_match('~^SELECT~i' . $utf8, $sql2)) {
             $data = (new self($sql2))
                 ->execute();
         }
@@ -220,7 +224,7 @@ class Query
                 ->execute();
         }
 
-        if (preg_match('~`dual`~i', $sql)) {
+        if (preg_match('~`dual`~i' . $utf8, $sql)) {
             return $data;
         }
 
@@ -686,6 +690,12 @@ class Query
                                 if (count($options)) {
 
                                     foreach ($options as $option) {
+                                        
+                                        $utf8 = 'u';
+                                        if (defined('COMMANDLINE_TYPE')) {
+                                            $utf8 = '';
+                                            $option = iconv('utf-8', 'cp866', $option);
+                                        }
 
                                         $bool = null;
 
@@ -696,10 +706,12 @@ class Query
                                                     '%' => '(.*?)',
                                                     '_' => '(.)'
                                                 );
-                                                $regexp = "/^" . strtr(preg_quote($opts[0]), $replacePairs) . "$/su";
+
+                                                $regexp = "/^" . strtr(preg_quote($opts[0]), $replacePairs) . "$/s" . $utf8;
                                                 if (strpos($regexp, '(.*?)')) {
                                                     $regexp .= 'i';
                                                 }
+
                                                 $bool = preg_match($regexp, $option);
                                                 break;
 
